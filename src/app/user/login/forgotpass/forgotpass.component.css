@@ -1,0 +1,28 @@
+.container{
+  color: #fff;
+  padding: 30px 85px;
+  min-height: 280px;
+}
+.btnEdit{
+  color: #fff;
+  background: #e52f70;
+  width: 195px;
+  height: 40px;
+  margin: 10px 0px 0px 15px;
+}
+.btnEdit:hover{
+  background: #ff8a00;
+  transform: translateY(2px);
+}
+#email{
+  width: 500px;
+}
+.fail{
+  color:#fff;
+  background: rgba(255, 2, 2, 0.3);
+  border: 1px solid red;
+  border-radius: 5px;
+  margin: 0px 20px 15px 0px;
+  padding: 15px;
+  width: 475px;
+}

@@ -1,0 +1,38 @@
+.phim{
+  padding: 15px 0px 10px 40px;
+}
+.btnTicket {
+  margin: 0px 5px;
+  background: #e52f70;
+  width: 80px;
+  color: #fff;
+}
+.btnTicket:hover {
+  background: #ff8a00;
+}
+.movie {
+  color: #fff;
+  padding: 0px;
+  background: #17141d;
+  box-shadow: -1rem 0 3rem #000;
+  width: 230px;
+}
+.movie:hover{
+  transform: scale(1.05);
+}
+h4 {
+  margin: 0px;
+  padding: 0px;
+}
+.img {
+  height: 315px;
+}
+.name {
+  min-height: 55px;
+}
+.nut{
+  padding-top: 10px;
+}
+.text-muted{
+  padding-left: 15px;
+}

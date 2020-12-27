@@ -1,0 +1,52 @@
+<div class="w3-main" style="margin-left:300px;margin-top:50px;">
+    <div class="w3-card-4" style="width:80%; margin-left: 120px;">
+
+        <div class=" w3-indigo" style=" text-align: center;">
+            <h1>ADD PERIOD</h1>
+        </div>
+
+        <form action="" class="w3-container" ngNativeValidate style="background-color:rgb(253, 225, 183) ;" [formGroup]="formcheck">
+
+            <div class="form-group">
+                <label class="w3-text-brown"><b>Start Time: </b></label>
+                <input type="time" class="form-control" [(ngModel)]="startTime" formControlName="StartTime" [ngClass]="{'is-invalid':
+            formcheck.get('StartTime').touched && formcheck.get('StartTime').invalid}" />
+                <div *ngIf="formcheck.get('StartTime').touched && formcheck.get('StartTime').invalid" class="invalid-feedback">
+                    <div *ngIf="formcheck.get('StartTime').errors.required">StartTime is required</div>
+                    <div *ngIf="formcheck.get('StartTime').errors.pattern">StartTime required</div>
+                </div>
+            </div>
+            
+
+            <div class="form-group">
+                <label class="w3-text-brown"><b>Status Day</b></label>
+                <select class="form-control"  formControlName="StatusDay" [(ngModel)]="statusDay">
+                    <option value=0>Monday to Friday</option>
+                    <option value=1>Weekend & Holiday</option> 
+                  </select>
+                <div *ngIf="formcheck.get('StatusDay').touched && formcheck.get('StatusDay').invalid" class="invalid-feedback">
+                    <div *ngIf="formcheck.get('StatusDay').errors.required">StatusDay is required</div>
+                    <div *ngIf="formcheck.get('StatusDay').errors.pattern">StatusDay is number</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="w3-text-brown"><b>Price</b></label>
+                <input class="w3-input w3-border w3-sand" type="text" [(ngModel)]="price" formControlName="Price" [ngClass]="{'is-invalid':
+      formcheck.get('Price').touched && formcheck.get('Price').invalid}" />
+                <div *ngIf="formcheck.get('Price').touched && formcheck.get('Price').invalid" class="invalid-feedback">
+                    <div *ngIf="formcheck.get('Price').errors.required">Price is required</div>
+                    <div *ngIf="formcheck.get('Price').errors.pattern">Price is number</div>
+                </div>
+            </div>
+
+            <div class=" w3-indigo" style="height:50px;text-align: center;">
+                <button type="submit" class="w3-button w3-deep-orange w3-round-xlarge" (click)="onaddPeriod()" [disabled]="!formcheck.valid" style="margin-top: 5px;">ADD PERIOD</button>
+                <button type="submit" class="w3-button w3-deep-orange w3-round-xlarge" (click)="back()" style="margin-top: 5px; margin-left: 5px;">BACK</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="w3-container w3-black w3-padding-32" style="margin-top: 350px;">
+
+</div>

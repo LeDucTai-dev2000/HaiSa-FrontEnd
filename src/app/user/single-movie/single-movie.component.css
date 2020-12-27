@@ -1,0 +1,52 @@
+.container {
+  padding-top: 40px;
+  color: #fff;
+}
+.img{
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+}
+ol, ul {
+	list-style: none;
+}
+.movie-item li {
+  padding-left: 50px;
+  padding-bottom: 30px;
+}
+.movie-item{
+  padding-left: 50px;
+}
+.info-movie {
+  padding: 10px;
+}
+.btn {
+  margin: 5px 40px 5px 30px;
+  background-image: linear-gradient(to bottom,#ff8a00,#e52f70);
+  width: 80px;
+  color: #fff;
+}
+.showtime-movie {
+  padding: 10px 5px 30px 20px;
+}
+.showtime-item {
+  border: 1px solid #e52f70;
+  margin: 5px 20px 5px 20px;
+  padding: 10px 20px 10px 20px;
+  color: #ff8a00
+}
+.tit {
+  width: 200px;
+  margin: 0px;
+}
+.thumbnails{
+  height: 540px;
+  width: 350px;
+}
+.des{
+  padding: 0px 0px 0px 40px;
+}
+.gen{
+  padding: 0px 10px 0px 14px
+}

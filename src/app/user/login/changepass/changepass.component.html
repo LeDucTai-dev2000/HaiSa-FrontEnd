@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="title">
+    <h2>ĐỔI MẬT KHẨU</h2>
+  </div>
+
+  <div>
+    <div class="fail text-center" *ngIf="saipass">
+      <h3>Mật khẩu cũ không đúng. Vui lòng nhập lại</h3>
+    </div>
+  </div>
+
+  <form [formGroup]="change" (ngSubmit)="changePass()">
+    <div class="form-group">
+      <label for="exampleFormControlSelect2">Mật khẩu cũ</label>
+      <input
+        type="password"
+        class="form-control"
+        formControlName="password"
+        [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+      />
+      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">
+          Không được để trống mật khẩu
+        </div>
+        <div *ngIf="f.password.errors.minlength">
+          Mật khẩu phải lớn hơn 6 kí tự
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Mật khẩu mới</label>
+      <input
+        type="password"
+        class="form-control"
+        formControlName="newpass"
+        [ngClass]="{ 'is-invalid': submitted && f.newpass.errors }"
+      />
+      <div *ngIf="submitted && f.newpass.errors" class="invalid-feedback">
+        <div *ngIf="f.newpass.errors.required">
+          Không được để trống mật khẩu
+        </div>
+        <div *ngIf="f.newpass.errors.minlength">
+          Mật khẩu phải lớn hơn 6 kí tự
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlSelect2">Nhập lại mật khẩu mới</label>
+      <input
+        type="password"
+        class="form-control"
+        formControlName="repass"
+        [ngClass]="{ 'is-invalid': submitted && f.repass.errors }"
+      />
+      <div *ngIf="submitted && f.repass.errors" class="invalid-feedback">
+        <div *ngIf="f.repass.errors.required">Vui lòng xác nhận mật khẩu</div>
+        <div *ngIf="f.repass.errors.mustMatch">Mật khẩu không trùng khớp</div>
+      </div>
+    </div>
+
+    <button class="btn btnEdit">CẬP NHẬT</button>
+  </form>
+</div>

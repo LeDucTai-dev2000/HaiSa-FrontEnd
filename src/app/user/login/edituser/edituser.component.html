@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="title">
+    <h2>CẬP NHẬT THÔNG TIN TÀI KHOẢN</h2>
+  </div>
+
+  <form [formGroup]="info" (ngSubmit)="updateMember()">
+    <div class="form-group">
+      <label for="exampleFormControlSelect2">Họ Tên</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="name"
+        [ngClass]="{ 'is-invalid': submitted && f.name.errors }"
+      />
+      <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+        <div *ngIf="f.name.errors.required">Không được để trống Họ Tên</div>
+    </div>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Số điện thoại</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="phone"
+        [ngClass]="{ 'is-invalid': submitted && f.phone.errors }"
+      />
+      <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+        <div *ngIf="f.phone.errors.required">Không được để trống SĐT</div>
+        <div *ngIf="f.phone.errors.minlength">SĐT phải lớn hơn 10 số</div>
+        <div *ngIf="f.phone.errors.maxlength">SĐT không được vượt quá 11 số</div>
+        <div *ngIf="f.phone.errors.pattern">SĐT chỉ được nhập số</div>
+    </div>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlSelect2">Địa chỉ</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="address"
+        [ngClass]="{ 'is-invalid': submitted && f.address.errors }"
+      />
+      <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+        <div *ngIf="f.address.errors.required">Không được để trống Địa chỉ</div>
+    </div>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlSelect2">Ngày sinh</label>
+      <input
+        type="date"
+        class="form-control"
+        formControlName="date"
+        [ngClass]="{ 'is-invalid': submitted && f.date.errors }"
+      />
+      <div *ngIf="submitted && f.date.errors" class="invalid-feedback">
+        <div *ngIf="f.date.errors.required">Không được để trống ngày sinh</div>
+        <div *ngIf="f.date.errors.pattern">Ngày sinh sai vui lòng chọn lại</div>
+    </div>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlSelect2">Số CMND/CCCD/Hộ chiếu</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="idcard"
+        [ngClass]="{ 'is-invalid': submitted && f.idcard.errors }"
+      />
+      <div *ngIf="submitted && f.idcard.errors" class="invalid-feedback">
+        <div *ngIf="f.idcard.errors.required">Số CMND/CCCD không được để trống</div>
+        <div *ngIf="f.idcard.errors.pattern">Số CMND/CCCD chỉ được nhập số</div>
+        <div *ngIf="f.idcard.errors.minlength">Số CMND chỉ có 9 số</div>
+        <div *ngIf="f.idcard.errors.maxlength">Số CCCD chỉ có 12 số</div>
+    </div>
+    </div>
+
+    <button class="btn btnEdit">CẬP NHẬT</button>
+  </form>
+</div>

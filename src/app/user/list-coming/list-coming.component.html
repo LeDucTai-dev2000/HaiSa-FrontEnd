@@ -1,0 +1,45 @@
+<div class="container">
+  <div>
+    <a class="btn btnTit textTit"><h4>Phim Sắp Chiếu</h4></a>
+    <a class="btn btnTit" routerLink="/list"><h4>Phim Đang Chiếu</h4> </a>
+  </div>
+  <section class="text-center">
+    <div class="row wow">
+      <div
+        class="col-lg-3 col-md-6 item mb-4"
+        *ngFor="let movie of pageOfItems"
+      >
+        <div class="card movie-item">
+          <div class="movie-img">
+            <img
+              class="card-img-top img"
+              src="{{ movie.thumbnail }}"
+              alt="Card image"
+            />
+          </div>
+          <div class="card-body">
+            <div class="movie-name">
+              <h4 class="card-title">{{ movie.movieName }}</h4>
+            </div>
+            <p class="card-text">{{ movie.duration }} phút</p>
+            <h5 class="card-text">(C{{ movie.ageLimit }})</h5>
+            <app-viewtrailer [trailer]="movie.trailer"></app-viewtrailer>
+            <a
+              [routerLink]="['/single-movie', movie.movieId]"
+              class="btn btnTicket"
+              >Mua Vé</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="d-flex justify-content-center">
+    <jw-pagination
+      [items]="movies"
+      (changePage)="onChangePage($event)"
+      pageSize="8"
+    ></jw-pagination>
+  </div>
+</div>

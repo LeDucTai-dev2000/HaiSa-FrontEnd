@@ -1,0 +1,45 @@
+<div class="container">
+  <h2>CHỌN GHẾ</h2>
+  <div class="row">
+    <div class="col-md-8 col-sm-12 seat-item">
+      <div class="tv text-center"> MÀN HÌNH CHIẾU PHIM </div>
+      <div class="text-right lv">LỐI VÀO</div>
+      <div class="col-md-3 col-lg-3 butt" *ngFor="let seat of seatStatus">
+        <button
+          class="btn btn-seat"
+          [disabled]="seat.status"  id={{seat.seat.seatId}}
+          (click)="
+            select(seat.seat.seatId, seat.seatStatusId, seat.seat.seatName); changeColor(seat.seat.seatId)
+          "
+
+        >
+          {{ seat.seat.seatName }}
+        </button>
+      </div>
+    </div>
+    <div class="col-md-4 ">
+
+      <div class="row seat1">
+        <div>
+          <h4>Ghế đã chọn:</h4>
+          <div class="row seat">
+          <div class="seatName" *ngFor="let item of seatName">
+            <div class="name">{{item.name}}</div>
+          </div></div>
+          <button class="btn btnpay" (click)="onSubmit()" [disabled]="!chon">CHỌN MUA</button>
+        </div>
+      </div>
+      <div class="ghe">
+        <div>
+          <button class="btn btn-demo" disabled></button><p>GHẾ ĐÃ CHỌN</p>
+        </div>
+        <div>
+          <button class="btn btn-demo"></button><p>GHẾ TRỐNG</p>
+        </div>
+        <div>
+          <button class="btn btn-in"></button><p>GHẾ ĐANG CHỌN</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+<div class="w3-main" style="margin-left:305px;margin-top:50px;">
+    <strong style="margin-left: 500px; font-size: 40px;font-family: 'Courier New', Courier, monospace; color: rgb(247, 117, 43);">FOOD</strong>
+    <div class="container">
+        <button type="button" class="btn btn-success" style="margin-right: 500px;margin-bottom: 10px;" routerLink="/admin/listfood/add" [disabled]="check">ADD FOOD</button>
+        <mat-tab-group>
+            <mat-tab label="Food for sale">
+                <div class="form-group">
+                    <form class="example" style="margin-left: 850px;max-width:300px; margin-top: 10px;">
+                        <input type="text" placeholder="Search.." name="" [(ngModel)]="name1" [ngModelOptions]="{ standalone: true }">
+                        <button type="submit" (click)="onSearch(name1)"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+                <table class="table table-hover table-bordered table-info">
+                    <thead class="thead-dark">
+                        <tr style="text-align: center;">
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let food of food1 |   paginate: {id:'listing_pagination1', itemsPerPage: 5, currentPage: p,totalItems: totalRecord}">
+                            <td>{{food.name}}</td>
+                            <td>{{food.price | currency:"VND":true}}</td>
+                            <td style="text-align: center;">
+                                <button type="button" class="btn btn-primary" (click)="onUpdate(this.food)" style="margin-right: 5px;" [disabled] = "check">EDIT</button>
+                                <button type="button" class="btn btn-danger" (click)="onDelete(this.food)" [disabled]="check" >DELETE</button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <pagination-controls (pageChange)="p = $event" previousLabel="Previous" nextLabel="Next" maxSize="5" directionLinks="true" id="listing_pagination1"></pagination-controls>
+            </mat-tab>
+            <mat-tab label="Food not for sale">
+                <div class="form-group">
+                    <!-- <button type="submit" class="btn btn-primary" (click)="onSearch2(name2)" style="margin-left: 1100px ;">Search</button>
+                    <div class="col-sm-3">
+                        <input type="text" name="" id="input" class="form-control" placeholder="Type Movie Name" [(ngModel)]="name2" [ngModelOptions]="{ standalone: true }" required="required" style="margin-left: 890px ; margin-top: 10px;" />
+                    </div> -->
+                    <form class="example" style="margin-left: 850px;max-width:300px; margin-top: 10px;">
+                        <input type="text" placeholder="Search.." name="" [(ngModel)]="name2" [ngModelOptions]="{ standalone: true }">
+                        <button type="submit" (click)="onSearch2(name2)"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+                <table class="table table-hover table-bordered table-info">
+                    <thead class="thead-dark">
+                        <tr style="text-align: center;">
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let food of food2 |  paginate: {id:'listing_pagination2', itemsPerPage: 5, currentPage: p2,totalItems: totalRecord2}">
+                            <td>{{food.name}}</td>
+                            <td>{{food.price | currency:"VND":true}}</td>
+                            <td style="text-align: center;">
+                                <button type="button" class="btn btn-primary" (click)="onUpdate(this.food)" style="margin-right: 5px;">EDIT</button>
+                                <button type="button" class="btn btn-danger" (click)="onDelete(this.food)">DELETE</button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <pagination-controls (pageChange)="p2 = $event" previousLabel="Previous" nextLabel="Next" maxSize="5" directionLinks="true" id="listing_pagination2"></pagination-controls>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>
+<div class="w3-container w3-black w3-padding-32" style="margin-top: 350px;">
+
+</div>

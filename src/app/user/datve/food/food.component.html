@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="row total">
+    <div class="col-md-8 tableTot">
+      <table class="table table-borderless table-sm">
+        <tbody>
+          <tr>
+            <td>{{ movieName }}</td>
+            <td>{{ totalSeat }} VNĐ</td>
+          </tr>
+
+          <tr>
+            <td>Combo</td>
+            <td>{{ totalFood }} VNĐ</td>
+          </tr>
+          <tr>
+            <td>TỔNG TIỀN</td>
+            <td>{{ totalSeat + totalFood }}VNĐ</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-4 d-flex flex-row-reverse pay">
+      <button class="btn btnpay" (click)="onSubmit()">THANH TOÁN</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card mb-3 col-md-6" *ngFor="let item of foods">
+      <div class="row no-gutters">
+        <div class="col-md-4 col-sm-4">
+          <img
+            src="../../../../assets/img/food.jpg"
+            class="card-img"
+            alt="..."
+            style="width: 100%"
+          />
+        </div>
+        <div class="col-md-8 col-sm-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ item.name }}</h5>
+            <p class="card-text">{{ item.price }} VNĐ</p>
+            <div class="buttons_added">
+
+<div>
+                <button class="btn btn_food" (click)="chon(item)">
+                  Chọn mua
+                </button>
+              </div>
+
+                <div class="row" *ngFor="let qty of foodCart">
+                  <div class="qty" *ngIf="item.foodId == qty.foodId">
+                    <div class="textqty ">Số Lượng: <strong>{{ qty.quantity }}</strong></div>
+
+
+                    <div class="grqty ">
+                      <button
+                        class="minus is-form btnqty btn"
+                        (click)="giam(item)"
+
+                      >
+                        -
+                      </button>
+
+                      <button
+                        class="plus is-form btnqty btn"
+                        (click)="tang(item)"
+
+                      >
+                        +
+                      </button>
+                    </div>
+
+                  </div>
+                </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

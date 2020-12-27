@@ -1,0 +1,18 @@
+<div>
+
+  <div class="row hay">
+
+    <div>
+      <div class="showtime-movie">
+        <div class="row" *ngFor="let item of showtime">
+        <h5>{{item.date | date: 'dd/MM/yyy'}}</h5>
+        <!-- <div class="time" *ngFor="let time of date.periods"> -->
+        <a  [routerLink]="['/ticketing',item.showtimeId]"><span class="showtime-item">{{item.period.startTime}}</span></a>
+      </div>
+    </div>
+    </div>
+    <!-- </div> -->
+    </div>
+
+</div>
+

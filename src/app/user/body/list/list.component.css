@@ -1,0 +1,54 @@
+.cont {
+  margin: 20px 40px;
+}
+.hay {
+  padding: 10px 12px 20px 12px;
+}
+.movie {
+  color: #fff;
+  padding: 0px;
+  background: #17141d;
+  box-shadow: -1rem 0 3rem #000;
+  width: 600px;
+  height: 260px;
+}
+.content{
+  height: 100%;
+}
+.img {
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
+}
+.nut{
+  padding: 10px 0px 0px 0px;
+}
+.btnTicket {
+  margin: 0px 5px 0px 15px;
+  background: #e52f70;
+  width: 80px;
+  color: #fff;
+}
+.btnTicket:hover {
+  background: #ff8a00;
+  transform: scale(1.05);
+}
+.snowflake {
+  color: #fff;
+  font-size: 1em;
+  font-family: Arial, sans-serif;
+  text-shadow: 0 0 5px #000;
+}
+.hoverr {
+  border-radius: 4px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+  padding: 14px 80px 18px 36px;
+  cursor: pointer;
+}
+.hoverr:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}

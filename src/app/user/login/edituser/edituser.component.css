@@ -1,0 +1,15 @@
+.container{
+  color: #fff;
+  padding: 30px 85px;
+}
+.btnEdit{
+  color: #fff;
+  background: #e52f70;
+  width: 145px;
+  height: 40px;
+  margin-top: 10px;
+}
+.btnEdit:hover{
+  background: #ff8a00;
+  transform: translateY(2px);
+}

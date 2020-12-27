@@ -1,0 +1,79 @@
+<div class="w3-main" style="margin-left:305px;margin-top:50px;">
+  <div class="card" style="width:600px; left: 300px;top: 50px;">
+    <div class="card-header w3-deep-orange" style="text-align: center;">
+      <h1>DETAILS THIS MOVIE</h1>
+    </div>
+    <div class="card-body " style="text-align: center;">
+      <img src="../../../../assets/img/haisa.png" alt="Card image" style="width:200px;height: 300px;">
+    </div>
+    <div class="card-body w3-light-gray">
+      <div class="form-group">
+        <label>ID: </label>
+        <input type="number" class="form-control" [(ngModel)]="movies.movieId" [ngModelOptions]="{standalone: true}"
+          disabled>
+      </div>
+      <div class="form-group">
+        <label>Movie Name: </label>
+        <input type="text" class="form-control" [(ngModel)]="movies.movieName" [ngModelOptions]="{standalone: true}"
+          disabled>
+      </div>
+      <div class="form-group">
+        <label>Actors: </label>
+        <input type="text" class="form-control" [(ngModel)]="movies.actors" [ngModelOptions]="{standalone: true}"
+          disabled>
+      </div>
+      <div class="form-group">
+        <label>Director: </label>
+        <input type="text" class="form-control" [(ngModel)]="movies.director" [ngModelOptions]="{standalone: true}"
+          disabled>
+      </div>
+      <div class="form-group">
+        <label for="my-textarea">Description: </label>
+        <textarea id="my-textarea" class="form-control" name="" rows="3" [(ngModel)]="movies.description"
+          [ngModelOptions]="{standalone: true}" disabled></textarea>
+      </div>
+      <div class="form-group">
+        <label>Duration: </label>
+        <input type="number" class="form-control" [(ngModel)]="movies.duration" [ngModelOptions]="{standalone: true}"
+          disabled>
+      </div>
+      <div class="form-group">
+        <label>Trailer: </label>
+        <input type="text" class="form-control" [(ngModel)]="movies.trailer" [ngModelOptions]="{standalone: true}"
+          disabled>
+      </div>
+      <div class="form-group">
+        <label>Age Limit: </label>
+        <input type="number" class="form-control" [(ngModel)]="movies.ageLimit" [ngModelOptions]="{standalone: true}"
+          disabled>
+      </div>
+
+      <table class="table table-hover table-bordered table-info">
+        <thead class="thead-dark">
+          <tr style="text-align:center">
+            <th>Genre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let genre of genredetails">
+            <td>{{genre.genreMovie.name}}</td>
+
+
+        </tbody>
+      </table>
+
+
+
+
+    </div>
+    <div class="card-footer w3-deep-orange " style="text-align: center;">
+      <button type="submit" class="w3-button w3-pink w3-round-xlarge" (click)="back()" style="left: 100px;">BACK</button>
+      <h2>HAISA CINEMA</h2>
+    </div>
+  </div>
+
+
+</div>
+<div class="w3-container w3-black w3-padding-32" style="margin-top: 200px;">
+
+</div>

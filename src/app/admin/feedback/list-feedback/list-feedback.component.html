@@ -1,0 +1,30 @@
+<div class="w3-main" style="margin-left:305px;margin-top:50px;">
+    <strong style="margin-left: 500px; font-size: 40px;font-family: 'Courier New', Courier, monospace; color: rgb(247, 117, 43);">FEEDBACK</strong>
+    <div class="container">
+        <table class="table table-hover table-bordered table-info">
+            <thead style="text-align: center;" class="thead-dark">
+                <tr>
+                    
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Content</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let feedback of feedbacks |  paginate: { itemsPerPage: 10, currentPage: p }">
+                    
+                    <td>{{feedback.email}}</td>
+                    <td>{{feedback.phone}}</td>
+                    <td>{{feedback.content}}</td>
+
+                </tr>
+
+            </tbody>
+        </table>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>
+<div class="w3-container w3-black w3-padding-32" style="margin-top: 350px;">
+
+</div>

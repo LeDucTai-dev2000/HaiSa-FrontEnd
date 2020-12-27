@@ -1,0 +1,32 @@
+
+<div class="container">
+  <section class="text-center">
+    <div class="row wow">
+      <div
+        class="col-lg-3 col-md-6 item mb-4"
+        *ngFor="let item of movie"
+      >
+        <div class="card movie-item">
+          <div class="img">
+          <img
+            class="card-img-top"
+            src="{{item.thumbnail }}"
+            alt="Card image"
+          />
+        </div>
+          <div class="card-body">
+            <div class="movie-name">
+            <h4 class="card-title">{{ item.movieName }}</h4>
+          </div>
+            <p class="card-text">{{item.description | slice : 0 : 70 }}... <small> Xem thêm</small></p>
+            <p class="card-text text-muted">{{ item.duration }} phút</p>
+            <h5 class="card-text" *ngIf="item.status !== 3">(C{{ item.ageLimit }})</h5>
+            <h3 *ngIf="item.status == 3" class="stop">ĐÃ NGỪNG CHIẾU</h3>
+            <app-viewtrailer [trailer]="item.trailer"></app-viewtrailer>
+            <button [routerLink]="['/single-movie', item.movieId]" [disabled]="item.status == 3" class="btn btnTicket">Mua Vé</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

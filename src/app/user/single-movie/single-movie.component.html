@@ -1,0 +1,52 @@
+<div class="container ">
+    <div class="row">
+        <div class="col-sm-4 col-md-4 thumbnails">
+            <img class="img" src="{{movie.thumbnail}}" alt="">
+        </div>
+        <div class="col-sm-8 col-md-8 movie-item">
+            <div class="info-movie">
+                <h1>{{movie.movieName}}</h1>
+                <p class="des">{{movie.description}}</p>
+            </div>
+            <ul>
+                <li>
+                  <div class="row">
+                    <div class="col-2 tit">Phân Loại:</div>
+                    <div class="col-9">C{{movie.ageLimit}}</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="row">
+                    <div class="col-2 tit">Thể loại:</div>
+                    <div class="col-9">
+                      <div class="row">
+                      <div *ngFor="let item of genres" class="gen">{{item.genreName}}</div>
+                    </div></div>
+                  </div>
+                </li>
+                <li>
+                  <div class="row">
+                    <div class="col-2 tit">Đạo diễn:</div>
+                    <div class="col-9">{{movie.director}}</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="row">
+                    <div class="col-2 tit">Diễn viên:</div>
+                    <div class="col-9">{{movie.actors}}</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="row">
+                    <div class="col-2 tit">Thời lượng:</div>
+                    <div class="col-9">{{movie.duration}} phút</div>
+                  </div>
+                </li>
+            </ul>
+            <div class="btn-movie">
+                <app-viewtrailer [trailer]=movie.trailer></app-viewtrailer>
+            </div>
+        </div>
+    </div>
+    <app-timeline></app-timeline>
+</div>

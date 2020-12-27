@@ -1,0 +1,188 @@
+<nav class="navbar navbar-expand-sm navbar-dark navv sticky-top">
+  <a class="navbar-brand" routerLink="/">
+    <img class="imglg" src="../../../assets/img/haisa.png" alt="" />
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse row" id="navbarSupportedContent">
+    <div class="col col-md-10 col-sm-10">
+      <ul class="navbar-nav tit">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/theater">Hệ Thống Rạp</a>
+        </li>
+        <li>
+          <a class="nav-link" routerLink="/list">Phim</a>
+        </li>
+        <li>
+          <a class="nav-link" routerLink="/q&a">Hỏi và Đáp</a>
+        </li>
+        <li>
+          <a class="nav-link" routerLink="/contact">Liên hệ</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<body>
+  <div id="login">
+    <div class="container">
+      <div id="login-row" class="row justify-content-center align-items-center">
+        <div id="login-column" class="col-md-6">
+          <div id="login-box" class="col-md-12">
+            <form
+              (keydown)="keyDownFunction($event)"
+              action="login"
+              method="post"
+              [formGroup]="form"
+            >
+              <h1 class="text-center text-primary">
+                <strong>ĐĂNG NHẬP</strong>
+              </h1>
+              <div class="form-group">
+                <mat-form-field>
+                  <mat-label>Email</mat-label>
+                  <input
+                    type="text"
+                    matInput
+                    placeholder="Email goes here"
+                    name="username"
+                    [(ngModel)]="credentials.username"
+                    name="user"
+                    formControlName="username"
+                    [ngClass]="{
+                      'is-invalid':
+                        form.get('username').touched &&
+                        form.get('username').invalid
+                    }"
+                  />
+                </mat-form-field>
+                <div class="customBlank" *ngIf="checkIfBlank">
+                  <span class="customBlank"
+                    >Tên tài khoản không được để trống</span
+                  >
+                </div>
+              </div>
+
+              <div class="form-group">
+                <mat-form-field>
+                  <mat-label>Mật khẩu</mat-label>
+                  <input
+                    type="password"
+                    matInput
+                    placeholder="Password goes here"
+                    name="password"
+                    [(ngModel)]="credentials.password"
+                    formControlName="password"
+                    [ngClass]="{
+                      'is-invalid':
+                        form.get('password').touched &&
+                        form.get('password').invalid
+                    }"
+                  />
+                </mat-form-field>
+                <div class="customBlank" *ngIf="checkIfBlank">
+                  <span class="customBlank">Mật khẩu không được để trống</span>
+                </div>
+              </div>
+              <div class="form-group2">
+                <label for="remember-me" class="text-center">
+                  <span>Remember me</span> <span>
+                    <input id="remember-me" name="remember-me" type="checkbox"
+                  /></span>
+                </label>
+
+                <label for="remember-me" style="padding-left: 45%">
+                  <a routerLink="/forgot">
+                    <span>Quên mật khẩu</span> <span></span
+                  ></a>
+                </label>
+              </div>
+            </form>
+            <!-- button effect hehe -->
+
+            <div class="btnContainer">
+              <div class="btnEffect">
+                <a (click)="login()">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  Đăng nhập
+                </a>
+                <div class="errors" *ngIf="displayError">
+                  <div>Tài khoản hoặc mật khẩu không đúng</div>
+                </div>
+              </div>
+              <div class="btnEffect">
+                <a routerLink="/sign-up">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  Đăng ký
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <form class="example-form"> -->
+
+  <!-- </form> -->
+</body>
+
+<footer class="footer">
+  <hr class="thick" />
+  <div class="bottom_border">
+    <div class="row">
+      <div class="col-sm-4 col-md col-sm-4 col-12 col">
+        <h5 class="headin5_amrc col_white_amrc pt2">Về HaiSa</h5>
+        <!--headin5_amrc-->
+        <p class="mb10">
+          Là hệ thống rạp chiếu phim hàng đầu Việt Nam, HaiSa Cinema đang ngày
+          càng phát triển hơn nữa với các chương trình đặc sắc, các khuyến mãi
+          hấp dẫn, đem đến cho khán giả những bộ phim bom tấn của thế giới và
+          Việt Nam nhanh chóng và sớm nhất.
+        </p>
+        <p>
+          <i class="fa fa-location-arrow"></i> 391A Nam Kỳ Khởi Nghĩa, Q. 3, TP.
+          Hồ Chí Minh
+        </p>
+        <p><i class="fa fa-phone"></i> +84-933019076</p>
+        <p><i class="fa fa fa-envelope"></i> haisacinema@gmail.com</p>
+      </div>
+
+      <div class="col-sm-4 col-md col-6 col">
+        <h5 class="headin5_amrc col_white_amrc pt2">Thông tin</h5>
+        <!--headin5_amrc-->
+        <ul class="footer_ul_amrc">
+          <li><a routerLink="/theater">Hệ Thống Rạp</a></li>
+          <li><a routerLink="/list">Phim Đang Chiếu</a></li>
+          <li><a routerLink="/list-coming">Phim Sắp Chiếu</a></li>
+          <li><a routerLink="/q&a">Hỏi và Đáp</a></li>
+          <li><a routerLink="/contact">Liên Hệ</a></li>
+        </ul>
+        <!--footer_ul_amrc ends here-->
+      </div>
+    </div>
+  </div>
+  <hr class="thick" />
+
+  <div class="container">
+    <p class="text-center textcp">
+      Copyright @2020 | Designed With by HaiSaTeam
+    </p>
+  </div>
+</footer>

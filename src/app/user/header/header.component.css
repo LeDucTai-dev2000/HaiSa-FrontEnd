@@ -1,0 +1,51 @@
+.tit{
+  padding-top: 19px;
+  font-size: 17px;
+}
+.navv{
+  background: rgba(0,0,0,0.5);
+  padding: 7px 5px 10px 40px;
+  box-shadow:0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+}
+.imglg {
+  width: 110px;
+}
+.imgUser {
+  width: 35px;
+}
+.tk {
+  background: rgba(0,0,0,0.5);
+}
+.search {
+  padding: 15px 90px 0 0;
+  background: #08070b
+}
+.searchbtn{
+  color: #ff8a00;
+}
+.searchbtn:hover{
+  background: #e52f70;
+  color:#fff;
+}
+.login{
+  padding: 15px 0px 0px 20px;
+}
+.logn{
+  color: #fff;
+  padding: 10px 17px 0px 0px;
+  font-size:17px;
+}
+.logn:hover {
+  color: #e52f70 !important;
+  transform: translateY(2px);
+}
+.name{
+  padding: 8px 10px 0px 0px;
+  margin: 0px;
+}
+.signup{
+  color:#ff8a00 !important;
+}
+.user{
+  padding-right: 20px;
+}

@@ -1,0 +1,30 @@
+<div class="w3-main" style="margin-left:300px;margin-top:50px;">
+    <strong style="margin-left: 500px; font-size: 40px;font-family: 'Courier New', Courier, monospace; color: rgb(247, 117, 43);">CINEMA</strong>
+    <div class="container">
+        <button type="button" class="btn btn-success" style="margin-right: 500px;margin-bottom: 10px;" routerLink="/admin/listcinema/add"  [disabled]="check" >ADD CINEMA</button>
+        <table class="table table-hover table-bordered table-info">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cinema of cinemas">
+                    <td>{{cinema.name}}</td>
+                    <td>{{cinema.address}}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary" (click)="onUpdate(this.cinema)" [disabled]="check">EDIT</button>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<br>
+<br>
+<div class="w3-container w3-black w3-padding-32" style="margin-top: 350px;">
+
+</div>

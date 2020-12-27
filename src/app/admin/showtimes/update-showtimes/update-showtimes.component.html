@@ -1,0 +1,145 @@
+<div class="w3-main" style="margin-left:300px;margin-top:50px;">
+
+  <div class="w3-card-4" style="width:80%; margin-left: 120px;">
+
+        <div class=" w3-indigo" style=" text-align: center;">
+            <h1>UPDATE SHOWTIMES</h1>
+        </div>
+
+        <form action="" class="w3-container" ngNativeValidate style="background-color:rgb(253, 225, 183) ;" [formGroup]="form">
+
+            <div class="form-group">
+                <label class="w3-text-brown"><b>ID: </b></label>
+                <input type="number" class="form-control" formControlName="showtimeId" disabled>
+            </div>
+
+            <div class="form-group">
+                <label class="w3-text-brown"><b>Movie: </b></label>
+                <select class="form-control"  formControlName="movieId" >
+                  <option *ngFor="let movie of movies"   value="{{movie.movieId}}">{{movie.movieName}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="w3-text-brown"><b>Period: </b></label>
+                <select class="form-control"  formControlName="periodId" >
+                  <option *ngFor="let period of periods"   value="{{period.periodId}}">{{period.startTime}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="w3-text-brown"><b>Room: </b></label>
+                <select class="form-control"  formControlName="roomId" >
+                  <option *ngFor="let room of rooms"   value="{{room.roomId}}">{{room.roomName}}--{{room.cinema.name}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="w3-text-brown"><b>Date: </b></label>
+                <input type="date" class="form-control" formControlName="date">
+            </div>
+            <div class=" w3-indigo" style="height:50px;text-align: center;">
+                <button type="submit" class="w3-button w3-deep-orange w3-round-xlarge" (click)="onupdateShowtimes()" style="margin-top: 5px;">UPDATE SHOWTIMES</button>
+                <button type="submit" class="w3-button w3-deep-orange w3-round-xlarge" (click)="back()" style="margin-top: 5px; margin-left: 5px;">BACK</button>
+            </div>
+        </form>
+    </div>
+    <div class="w3-container w3-black w3-padding-32" style="margin-top: 350px;">
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="w3-card-4" style="width:80%; margin-left: 120px;">
+
+        <div class=" w3-indigo" style=" text-align: center;">
+            <h1>UPDATE SHOWTIMES</h1>
+        </div>
+
+        <form action="" class="w3-container" ngNativeValidate style="background-color:rgb(253, 225, 183) ;" [formGroup]="formcheck">
+
+            <div class="form-group">
+                <label class="w3-text-brown"><b>ID: </b></label>
+                <input type="number" class="form-control" [(ngModel)]="showtimes.showtimeId" [ngModelOptions]="{standalone: true}" disabled>
+            </div>
+
+            <div class="form-group">
+                <label class="w3-text-brown"><b>Movie: </b></label>
+
+                <select class="form-control" [(ngModel)]="showtimes.movieId" formControlName="movie" [ngClass]="{'is-invalid':
+                formcheck.get('movie').touched && formcheck.get('movie').invalid}">
+                <option *ngFor="let movie of movies" value="{{movie.movieId}}">{{movie.movieName}}</option>
+                </select>
+                <div class="invalid-feedback">
+                    <div>Movie is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="w3-text-brown"><b>Employee: </b></label>
+                <select class="form-control" [(ngModel)]="showtimes.employeeId" formControlName="employee" [ngClass]="{'is-invalid':
+                formcheck.get('employee').touched && formcheck.get('employee').invalid}">
+            <option *ngFor="let employee of employees" value="{{employee.employeeId}}">{{employee.name}}</option>
+
+          </select>
+                <div class="invalid-feedback">
+                    <div>Employee is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="w3-text-brown"><b>Period: </b></label>
+                <select class="form-control" [(ngModel)]="showtimes.periodId" formControlName="period" [ngClass]="{'is-invalid':
+                formcheck.get('period').touched && formcheck.get('period').invalid}">
+            <option *ngFor="let period of periods" value="{{period.periodId}}">{{period.startTime}}</option>
+
+          </select>
+                <div class="invalid-feedback">
+                    <div>Period is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="w3-text-brown"><b>Room: </b></label>
+                <select class="form-control" [(ngModel)]="showtimes.roomId" formControlName="room" [ngClass]="{'is-invalid':
+                formcheck.get('room').touched && formcheck.get('room').invalid}">
+            <option *ngFor="let room of rooms" value="{{room.roomId}}">{{room.roomName}}--{{room.cinema.name}}</option>
+
+          </select>
+                <div class="invalid-feedback">
+                    <div>Room is required</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="w3-text-brown"><b>Date: </b></label>
+                <input type="date" class="form-control" [(ngModel)]="showtimes.date" formControlName="date" [ngClass]="{'is-invalid':
+                formcheck.get('date').touched && formcheck.get('date').invalid}">
+                <div class="invalid-feedback">
+                    <div>Date is required</div>
+                </div>
+            </div>
+
+            <div class=" w3-indigo" style="height:50px;text-align: center;">
+                <button type="submit" class="w3-button w3-deep-orange w3-round-xlarge" (click)="onupdateShowtimes()" [disabled]="!formcheck.valid" style="margin-top: 5px;">UPDATE SHOWTIMES</button>
+            </div>
+        </form>
+    </div> -->
+</div>

@@ -1,0 +1,19 @@
+.container {
+  color: #fff;
+  padding: 20px 0px;
+  min-height: 300px;
+}
+.box {
+  border: 1px solid #fff;
+  border-radius: 5px;
+  margin: 5px 10px;
+  padding: 10px 0px 10px 30px;
+  min-height: 310px;
+}
+.box1 {
+  padding: 0px;
+}
+.content {
+  padding: 5px 0px 10px 20px;
+}
+

@@ -1,0 +1,71 @@
+.container {
+  padding-top: 40px;
+  color: #fff;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+.btn {
+  width: 85px;
+  color: #fff;
+}
+.showtime-movie {
+  padding: 10px 5px 30px 20px;
+}
+.showtime-item {
+  border: 1px solid #e52f70;
+  margin: 5px 20px 5px 20px;
+  padding: 10px 15px 10px 15px;
+  color: #ff8a00;
+  min-width: 80px;
+}
+.showtime-item:hover{
+  border: 1px solid #ff8a00;
+  color: #e52f70
+}
+.time {
+  width: 120px;
+  float: left;
+}
+.card {
+  background: #17141d;
+  box-shadow: -1rem 0 3rem #000;
+}
+.thick {
+  height: 1px;
+  margin: 4rem 0;
+  background-image: linear-gradient(90deg,#ff8a00,#e52e71);
+  border-radius: 5px;
+  margin: 0;
+}
+.line {
+  height: 0.5px;
+  margin: 4rem 0;
+  background:#ff8a00;
+  border-radius: 5px;
+  margin: 0 ;
+}
+.row {
+  padding: 10px 0 0 0 ;
+}
+.sel {
+  background: #17141d;
+  box-shadow: -1rem 0 3rem #000;
+  color: #fff;
+  border-style: none;
+  float: left;
+}
+.se {
+  width: 450px;
+}
+.hay{
+  padding: 15px 0px 0px 0px;
+}
+.date{
+  padding-top: 14px;
+}
+.coming{
+  margin-top: 20px;
+}

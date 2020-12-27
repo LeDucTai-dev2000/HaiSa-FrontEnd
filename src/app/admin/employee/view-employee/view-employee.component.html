@@ -1,0 +1,75 @@
+<div class="w3-main" style="margin-left:305px;margin-top:50px;">
+    <div class="card" style="width:500px; left: 350px;top: 50px;">
+      <div class="card-header w3-deep-orange" style="text-align: center;">
+        <h1>DETAILS EMPLOYEE</h1>
+      </div>
+      <div class="card-body " style="text-align: center;">
+        <img src="../../../../assets/img/avatar.png" alt="Card image" style="width:300px;height: 300px;">
+      </div>
+      <div class="card-body w3-light-gray">
+        <div class="form-group">
+          <label>ID: </label>
+          <input type="number" class="form-control" [(ngModel)]="employees.employeeId" [ngModelOptions]="{standalone: true}"
+            disabled>
+        </div>
+        <div class="form-group">
+          <label> Name: </label>
+          <input type="text" class="form-control" [(ngModel)]="employees.name" [ngModelOptions]="{standalone: true}"
+            disabled>
+        </div>
+        <div class="form-group">
+          <label>Address: </label>
+          <input type="text" class="form-control" [(ngModel)]="employees.address" [ngModelOptions]="{standalone: true}"
+            disabled>
+        </div>
+        <div class="form-group">
+          <label>Phone: </label>
+          <input type="text" class="form-control" [(ngModel)]="employees.phone" [ngModelOptions]="{standalone: true}"
+            disabled>
+        </div>
+        <div class="form-group">
+          <label>Birthday: </label>
+          <input type="date" class="form-control" [(ngModel)]="employees.birthday" [ngModelOptions]="{standalone: true}"
+            disabled>
+        </div>
+        <div class="form-group">
+          <label>ID Card: </label>
+          <input type="text" class="form-control" [(ngModel)]="employees.idCard" [ngModelOptions]="{standalone: true}"
+            disabled>
+        </div>
+        <div class="form-group">
+          <label>Cinema: </label>
+          <input type="text" class="form-control" [(ngModel)]="cinema" [ngModelOptions]="{standalone: true}"
+            disabled>
+        </div>
+  
+        <table class="table table-hover table-bordered table-info">
+          <thead class="thead-dark">
+            <tr style="text-align:center">
+              <th>ROLE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let role of roles">
+              <td>{{role.name}}</td>
+  
+  
+          </tbody>
+        </table>
+  
+  
+  
+  
+      </div>
+      <div class="card-footer w3-pink " style="text-align: center;">
+        <h2>HAISA CINEMA</h2>
+      </div>
+    </div>
+  
+  
+  </div>
+  <div class="w3-container w3-black w3-padding-32" style="margin-top: 200px;">
+  
+  </div>
+
+ 

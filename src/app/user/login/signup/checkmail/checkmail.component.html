@@ -1,0 +1,35 @@
+<div class="container">
+
+  <h2> XÁC NHẬN EMAIL</h2>
+  <form [formGroup]="checkmail" (ngSubmit)="addMember()">
+    <div *ngIf="!saiMail">
+    <p>Mã xác nhận đã được gởi qua Email mà bạn đăng kí. Vui lòng kiểm tra Email.</p>
+  </div>
+    <div>
+      <div class="fail text-center" *ngIf="sai">
+        MÃ XÁC NHẬN KHÔNG ĐÚNG. VUI LÒNG KIỂM TRA LẠI.
+      </div>
+    </div>
+    <div *ngIf="saiMail">
+      <div class="fail text-center">
+        <strong>EMAIL ĐÃ ĐƯỢC SỬ DỤNG TRƯỚC ĐÓ. VUI LÒNG THAY ĐỔI EMAIL.</strong>
+      </div>
+      <button class="btn btnEdit" (click)="remove()">Quay lại Đăng ký</button>
+    </div>
+    <div *ngIf="!saiMail">
+    <div class="form-group">
+      <label for="exampleFormControlSelect2">Nhập mã xác nhận</label>
+      <input
+        type="text"
+        class="form-control nhap"
+        formControlName="code"
+      />
+      <div *ngIf="submitted && f.code.errors" class="invalid-feedback">
+        <div *ngIf="f.code.errors.required">Không được để trống code</div>
+      </div>
+    </div>
+    <button class="btn btnEdit">XÁC NHẬN</button>
+  </div>
+  </form>
+
+</div>

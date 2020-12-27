@@ -1,0 +1,32 @@
+<div class="w3-main" style="margin-left:305px;margin-top:50px;">
+    <strong style="margin-left: 500px; font-size: 40px;font-family: 'Courier New', Courier, monospace; color: rgb(247, 117, 43);">GENRE MOVIE</strong>
+    <div class="container">
+        <button type="button" class="btn btn-success" style="margin-right: 500px;margin-bottom: 10px;" routerLink="/admin/listgenremovie/add" [disabled] = "check">ADD GENRE MOVIE</button>
+        <table class="table table-hover table-bordered table-info">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>ACTION</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let genre of genremovies |  paginate: {id:'listing_pagination1', itemsPerPage: 5, currentPage: p,totalItems: totalRecord}">
+                    <td>{{genre.genreId}}</td>
+                    <td>{{genre.name}}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary" (click)="onUpdate(this.genre)" [disabled] = "check">Update</button>
+                        <!-- <button type="button" class="btn btn-danger">Delete</button> -->
+                    </td>
+
+                </tr>
+
+            </tbody>
+        </table>
+        <pagination-controls (pageChange)="p = $event" previousLabel="Previous" nextLabel="Next" maxSize="5" directionLinks="true" id="listing_pagination1"></pagination-controls>
+    </div>
+</div>
+<div class="w3-container w3-black w3-padding-32" style="margin-top: 350px;">
+
+</div>

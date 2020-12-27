@@ -1,0 +1,39 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-8 col-sm-12">
+      <div class="bill rounded">
+        <div class="bill1">
+        <h5 class="text-center">XÁC NHẬN HÓA ĐƠN</h5>
+        <strong>{{movieName}}</strong>
+        <p>Suất chiếu : {{showtime.period.startTime}}  {{showtime.date}}</p>
+        <p>{{showtime.room.cinema.name}}</p>
+         <div class="seat" *ngFor="let seat of listSeatName">{{seat.name}}</div>
+        <div>Ghế đã đặt:</div>
+        <p class="text-right">{{totalPriceofSeat}} VNĐ</p>
+        <hr class="thick">
+        <div *ngFor="let tot of foodBill; let i = index">
+        <div *ngFor="let item of foodName; let j = index" >
+        <p *ngIf="i == j">{{item.name}}  x{{tot.quantity}}</p>
+        <p *ngIf="i == j" class="text-right">  {{tot.total}} VNĐ</p>
+      </div>
+    </div>
+        <hr class="thick">
+        <p class="text-left">TỔNG CỘNG</p>
+        <Strong class="text-right">{{total}} VNĐ</Strong>
+
+      </div>
+    </div>
+  </div>
+    <div class="col-md-4 nut">
+      <div class="paypal">
+      <div id="paypal-checkout-btn"></div>
+    </div>
+      <button class="btn btnDel" (click)="onSubmit()"><small>HỦY GIAO DỊCH</small></button>
+
+    </div>
+
+  </div>
+
+</div>

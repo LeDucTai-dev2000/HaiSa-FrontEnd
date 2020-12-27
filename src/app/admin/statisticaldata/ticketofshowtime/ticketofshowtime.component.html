@@ -1,0 +1,115 @@
+<div class="w3-main" style="margin-left:305px;margin-top:50px;">
+    <strong style="margin-left: 400px; font-size: 40px;font-family: 'Courier New', Courier, monospace; color: rgb(247, 117, 43);">TICKET OF SHOWTIME</strong>
+    <div class="container">
+        <mat-tab-group>
+            <!-- Cinema 1  -->
+            <mat-tab label="HaiSa Nam Kì Khởi Nghĩa">
+                <table class="table table-hover table-bordered table-info" id="excel-table">
+                    <thead class="thead-dark">
+                        <tr style="text-align: center;">
+                            <th>Start Time</th>
+                            <th>Ticket Quantity</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of ticketshowtimes1 |   paginate: {id:'listing_pagination1', itemsPerPage: 10, currentPage: p1,totalItems: totalRecord1}">
+                            <td>{{data.startTime}}</td>
+                            <td>{{data.ticketQuantity}}</td>
+
+
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div>
+                    <button style="margin-left: 970px;margin-bottom: 10px;" (click)="exportexcel()" class="btn btn-success">Export To Excel</button>
+                </div>
+
+                <pagination-controls (pageChange)="p1 = $event" previousLabel="Previous" nextLabel="Next" maxSize="5" directionLinks="true" id="listing_pagination1"></pagination-controls>
+
+            </mat-tab>
+
+            <!-- Cinema 2 -->
+            <mat-tab label="HaiSa Quang Trung">
+                <table class="table table-hover table-bordered table-info" id="excel-table-2">
+                    <thead class="thead-dark">
+                        <tr style="text-align: center;">
+                            <th>Start Time</th>
+                            <th>Ticket Quantity</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of ticketshowtimes2 |   paginate: {id:'listing_pagination2', itemsPerPage: 10, currentPage: p2,totalItems: totalRecord2}">
+                            <td>{{data.startTime}}</td>
+                            <td>{{data.ticketQuantity}}</td>
+
+
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div>
+                    <button style="margin-left: 970px;margin-bottom: 10px;" (click)="exportexcel2()" class="btn btn-success">Export To Excel</button>
+                </div>
+                <pagination-controls (pageChange)="p2 = $event" previousLabel="Previous" nextLabel="Next" maxSize="5" directionLinks="true" id="listing_pagination2"></pagination-controls>
+            </mat-tab>
+
+            <!-- Cinema 3 -->
+            <mat-tab label="HaiSa Nguyễn Kiệm">
+                <table class="table table-hover table-bordered table-info" id="excel-table-3">
+                    <thead class="thead-dark">
+                        <tr style="text-align: center;">
+                            <th>Start Time</th>
+                            <th>Ticket Quantity</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of ticketshowtimes3 |   paginate: {id:'listing_pagination3', itemsPerPage: 10, currentPage: p3,totalItems: totalRecord3}">
+                            <td>{{data.startTime}}</td>
+                            <td>{{data.ticketQuantity}}</td>
+
+
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div>
+                    <button style="margin-left: 970px;margin-bottom: 10px;" (click)="exportexcel3()" class="btn btn-success">Export To Excel</button>
+                </div>
+                <pagination-controls (pageChange)="p3 = $event" previousLabel="Previous" nextLabel="Next" maxSize="5" directionLinks="true" id="listing_pagination3"></pagination-controls>
+            </mat-tab>
+
+            <!-- Cinema 4 -->
+            <mat-tab label="HaiSa Hoàng Sa">
+                <table class="table table-hover table-bordered table-info" id="excel-table-4">
+                    <thead class="thead-dark">
+                        <tr style="text-align: center;">
+                            <th>Start Time</th>
+                            <th>Ticket Quantity</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of ticketshowtimes4 |   paginate: {id:'listing_pagination4', itemsPerPage: 10, currentPage: p4,totalItems: totalRecord4}">
+                            <td>{{data.startTime}}</td>
+                            <td>{{data.ticketQuantity}}</td>
+
+
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div>
+                    <button style="margin-left: 970px;margin-bottom: 10px;" (click)="exportexcel4()" class="btn btn-success">Export To Excel</button>
+                </div>
+                <pagination-controls (pageChange)="p4 = $event" previousLabel="Previous" nextLabel="Next" maxSize="5" directionLinks="true" id="listing_pagination4"></pagination-controls>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>
+<div class="w3-container w3-black w3-padding-32" style="margin-top: 350px;">
+
+</div>

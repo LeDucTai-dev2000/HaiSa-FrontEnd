@@ -1,0 +1,73 @@
+
+
+
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
+    <header class="w3-container" style="padding-top:22px">
+        <h5><b><i class="fa fa-dashboard"></i> My Dashboard </b></h5>
+        
+    </header>
+
+    <div class="w3-row-padding w3-margin-bottom"  >
+
+        
+        <div class="w3-quarter">
+            <div class="w3-container w3-red w3-padding-16" >
+                <div class="w3-left"><i class="fa fa-comment w3-xxxlarge" data-toggle="tooltip" data-placement="Feebback" title="Total of Feedback !"></i></div>
+                <div class="w3-right" >
+                    <h3 data-toggle="tooltip" data-placement="Feebback" title="Total of Feedback !"><h1>{{countfeedback}}</h1></h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4 data-toggle="tooltip" data-placement="Feebback" title="Total of Feedback !">Feedback</h4>
+            </div>
+        </div>
+        <div class="w3-quarter">
+            <div class="w3-container w3-blue w3-padding-16">
+                <div class="w3-left"><i class="fa fa-eye w3-xxxlarge" data-toggle="tooltip" data-placement="Movies" title="Total of Movie !"></i></div>
+                <div class="w3-right">
+                    <h1  data-toggle="tooltip" data-placement="Movies" title="Total of Movie !">{{countmovie}}</h1>
+                </div>
+                <div class="w3-clear"></div>
+                <h4  data-toggle="tooltip" data-placement="Movies" title="Total of Movie !">Movies</h4>
+            </div>
+        </div>
+        <div class="w3-quarter">
+            <div class="w3-container w3-teal w3-padding-16">
+                <div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"  data-toggle="tooltip" data-placement="Ticket" title="Total of Ticket !"></i></div>
+                <div class="w3-right">
+                    <h1 data-toggle="tooltip" data-placement="Ticket" title="Total of Ticket !">{{countticket}}</h1>
+                </div>
+                <div class="w3-clear"></div>
+                <h4 data-toggle="tooltip" data-placement="Ticket" title="Total of Ticket !">Ticket</h4>
+            </div>
+        </div>
+        <div class="w3-quarter">
+            <div class="w3-container w3-orange w3-text-white w3-padding-16">
+                <div class="w3-left"><i class="fa fa-users w3-xxxlarge" data-toggle="tooltip" data-placement="Member" title="Total of Member !"></i></div>
+                <div class="w3-right">
+                    <h1 data-placement="Member" title="Total of Member !">{{countmember}}</h1>
+                </div>
+                <div class="w3-clear"></div>
+                <h4 data-placement="Member" title="Total of Member !">Member</h4>
+            </div>
+        </div>
+   
+    </div>
+
+    <app-charttotalcinema></app-charttotalcinema>
+    <div style="text-align: center;"><h1 style="font-family: 'Times New Roman', Times, serif; color: rgb(2, 26, 104);">The chart of total sales of cinemas</h1></div>
+
+    <app-countviewmovie></app-countviewmovie>
+    <div style="text-align: center;"><h1 style="font-family: 'Times New Roman', Times, serif;color: rgb(2, 26, 104);">The chart of total tickets sold for the movie in progress</h1></div>
+    <br>
+    <div class="w3-container w3-black w3-padding-32">
+       
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip();   
+    });
+    </script>
+    

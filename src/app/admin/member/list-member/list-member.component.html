@@ -1,0 +1,45 @@
+<div class="w3-main" style="margin-left:305px;margin-top:50px;">
+    <strong style="margin-left: 500px; font-size: 40px;font-family: 'Courier New', Courier, monospace; color: rgb(247, 117, 43);">MEMBER</strong>
+    <div class="container">
+        <div class="form-group">
+            <form class="example" style="margin-left: 850px;max-width:300px; margin-top: 10px;">
+                <input type="text" placeholder="Search.." name="" [(ngModel)]="name" [ngModelOptions]="{ standalone: true }">
+                <button type="submit" (click)="onSearch(name)"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <table class="table table-hover table-bordered table-info" id="excel-table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Birthday</th>
+                    <th>ID Card</th>
+                    <th>Total</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let member of members | paginate: {id:'listing_pagination1', itemsPerPage: 10, currentPage: p,totalItems: totalRecord}">
+                    <td>{{member.memberId}}</td>
+                    <td>{{member.memberName}}</td>
+                    <td>{{member.phone}}</td>
+                    <td>{{member.address}}</td>
+                    <td>{{member.birthday}}</td>
+                    <td>{{member.idCard}}</td>
+                    <td>{{member.totalMoney | currency:"VND":true}}</td>
+
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <button style="margin-left: 1040px;margin-bottom: 10px;" (click)="exportexcel()" class="btn btn-success">Export To Excel</button>
+    </div>
+    <pagination-controls (pageChange)="p = $event" previousLabel="Previous" nextLabel="Next" maxSize="5" directionLinks="true" id="listing_pagination1"></pagination-controls>
+</div>
+<div class="w3-container w3-black w3-padding-32" style="margin-top: 350px;">
+
+</div>

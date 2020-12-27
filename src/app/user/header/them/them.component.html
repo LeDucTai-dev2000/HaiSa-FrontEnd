@@ -1,0 +1,15 @@
+<!-- <button class="btn">
+<i class="fas fa-caret-down push"></i>
+</button> -->
+
+
+<div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+  <button class="btn btnPlus" ngbDropdownToggle></button>
+  <div class="dropdown-menu dropdown-menu-right menu" ngbDropdownMenu>
+    <button ngbDropdownItem class="btnUser" routerLink="/history">Lịch sử mua vé</button>
+    <button ngbDropdownItem class="btnUser" routerLink="/edit-account">Cập nhật thông tin</button>
+    <button ngbDropdownItem class="btnUser" routerLink="/change-pass">Đổi mật khẩu</button>
+    <hr>
+    <button ngbDropdownItem class="btnUser logout" (click)="Logout()">Đăng xuất</button>
+  </div>
+</div>

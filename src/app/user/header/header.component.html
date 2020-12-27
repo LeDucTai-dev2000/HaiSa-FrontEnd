@@ -1,0 +1,63 @@
+<div class="d-flex flex-row-reverse search">
+  <form
+    #tim="ngForm"
+    class="form-inline my-2 my-lg-0"
+    novalidate
+    (ngSubmit)="onSubmit(tim.value.tim)"
+  >
+    <input
+      class="form-control mr-sm-2 tk"
+      id="tim"
+      name="tim"
+      type="search"
+      placeholder="Search"
+      ngModel
+    />
+    <button class="btn my-2 my-sm-0 searchbtn" type="submit">Search</button>
+  </form>
+</div>
+<nav class="navbar navbar-expand-sm navbar-dark navv sticky-top">
+  <a class="navbar-brand" routerLink="/">
+    <img class="imglg" src="../../../assets/img/haisa.png" alt="" />
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse row" id="navbarSupportedContent">
+    <div class="col col-md-10 col-sm-10">
+      <ul class="navbar-nav tit">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/theater">Hệ Thống Rạp</a>
+        </li>
+        <li>
+          <a class="nav-link" routerLink="/list">Phim</a>
+        </li>
+        <li>
+          <a class="nav-link" routerLink="/q&a">Hỏi và Đáp</a>
+        </li>
+        <li>
+          <a class="nav-link" routerLink="/contact">Liên hệ</a>
+        </li>
+      </ul>
+    </div>
+    <div class="login col col-md-2 col-sm-2">
+      <div *ngIf="token == null">
+        <button class="btn logn signup" routerLink="/sign-up">Sign Up</button>
+        <button class="btn logn" routerLink="/login">Login</button>
+      </div>
+    </div>
+  </div>
+  <div class="row user" *ngIf="token !== null">
+    <p class="text-white name">{{ member.memberName }}</p>
+    <img src="../../../assets/img/user.png" class="imgUser" />
+    <app-them></app-them>
+  </div>
+</nav>

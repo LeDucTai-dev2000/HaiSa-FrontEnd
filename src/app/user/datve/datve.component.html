@@ -1,0 +1,115 @@
+<div class="container clearfix">
+  <div class="row">
+    <div class="col-sm-2 col-md-2 thumbnails">
+      <img class="img" src="{{ showtime.movie.thumbnail }}" alt="" />
+    </div>
+    <div class="col-sm-5 col-md-5 movie-item">
+      <div class="info-movie">
+        <h1>{{ showtime.movie.movieName }}</h1>
+        <div class="input-group">
+          <div class="row">
+            <div class="col"><p>{{ showtime.employee.cinema.name }}</p></div>
+          </div></div>
+          <div class="input-group">
+          <div class="row ">
+            <div class="col-md-8"><p>Phòng </p></div>
+            <div class="col-md-3"><p> R{{ showtime.room.roomName }}</p></div>
+          </div></div>
+          <div class="input-group">
+          <div class="row">
+            <div class="col-md-5"><p>Giờ chiếu</p></div>
+            <div class="col-md-2"><p>{{ showtime.period.startTime }}</p></div>
+            <div class="col-md-5"><p>{{ showtime.date }}</p></div>
+          </div></div>
+
+      </div>
+    </div>
+    <div class="col-md-5 col-sm-5">
+      <div>
+        <div class="fail text-center" *ngIf="loginFail">
+          <h1><strong>BẠN CHƯA ĐĂNG NHẬP</strong></h1>
+          <h2>Vui lòng chọn số lượng ghế bạn muốn mua</h2>
+          <h3>
+            Bấm CHỌN GHẾ Chúng tôi sẽ chuyển bạn đến Đăng Nhập sau khi đăng nhập
+            bạn sẽ được thực hiện bước tiếp theo.
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row ticket">
+    <div>
+      <h4>CHỌN VÉ</h4>
+      <p>Hãy chọn số lượng vé bạn muốn</p>
+      <p>Số lượng vé tối đa bạn được mua là 10 vé.</p>
+      <p></p>
+    </div>
+    <div class="ticket-table">
+      <table class="table table-borderless">
+        <thead>
+          <tr>
+            <th>Vé</th>
+            <th>Giá</th>
+
+            <th>Số Lượng</th>
+
+            <th>Tổng</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Adult Standard 2D</td>
+            <td>{{ showtime.period.price }} VNĐ</td>
+            <td>
+              <div class="buttons_added from">
+                <input
+                  class="minus is-form"
+                  type="button"
+                  value="-"
+                  (click)="giam()"
+                  [disabled]="min"
+                />
+                <input
+                  aria-label="quantity"
+                  class="input-qty"
+                  max="15"
+                  min="1"
+                  name=""
+                  type="number"
+                  value="{{ i }}"
+                  id="inc"
+                  disabled
+                />
+                <input
+                  class="plus is-form"
+                  type="button"
+                  value="+"
+                  (click)="tang()"
+                  [disabled]="max"
+                />
+              </div>
+            </td>
+            <td>{{ total }} VNĐ</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <button class="btn" routerLink="/seat" (click)="onSubmit()">
+      CHỌN GHẾ
+    </button>
+  </div>
+</div>
+
+<!-- <ng-template #template>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Modal</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <app-seat-select></app-seat-select>
+    </div>
+  </ng-template> -->

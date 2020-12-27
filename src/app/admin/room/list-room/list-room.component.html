@@ -1,0 +1,27 @@
+<div class="w3-main" style="margin-left:305px;margin-top:50px;">
+    <strong style="margin-left: 500px; font-size: 40px;font-family: 'Courier New', Courier, monospace; color: rgb(247, 117, 43);">ROOM</strong>
+    <div class="container">
+        <button type="button" class="btn btn-success" style="margin-right: 500px;margin-bottom: 10px;" routerLink="/admin/listroom/add" [disabled] = "check" >ADD ROOM</button>
+        <table class="table table-hover table-bordered table-info">
+            <thead class="thead-dark">
+                <tr style="text-align: center;">
+                    <th>Cinema</th>
+                    <th>Room Name</th>
+                    <th>Seat Amount</th>
+                </tr>
+            </thead>
+            <tbody style="text-align: center;">
+                <tr *ngFor="let room of rooms |  paginate: {id:'listing_pagination1', itemsPerPage: 10, currentPage: p,totalItems: totalRecord}">
+                    <td>{{room.cinema.name}}</td>
+                    <td>{{room.roomName}}</td>
+                    <td>{{room.seatAmount}}</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <pagination-controls (pageChange)="p = $event" previousLabel="Previous" nextLabel="Next" maxSize="5" directionLinks="true" id="listing_pagination1"></pagination-controls>
+</div>
+<div class="w3-container w3-black w3-padding-32" style="margin-top: 350px;">
+
+</div>

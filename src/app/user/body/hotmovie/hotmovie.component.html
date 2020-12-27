@@ -1,0 +1,32 @@
+<h2 class="text-white phim">Phim HOT</h2>
+<div class="container text-center">
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let item of movies">
+      <div class="card movie">
+        <div class="img">
+          <img
+            class="card-img-top"
+            src="{{ item.thumbnail }}"
+            alt="Card image"
+            style="width: 100%; height: 100%"
+          />
+        </div>
+        <div class="card-body">
+          <h4 class="card-title name">{{ item.movieName }}</h4>
+          <div class="row d-flex justify-content-center">
+            <small> C{{ item.ageLimit }}</small>
+            <small class="text-muted">{{ item.duration }} phút</small>
+          </div>
+          <div class="nut">
+            <app-viewtrailer [trailer]="item.trailer"></app-viewtrailer>
+            <a
+              [routerLink]="['/single-movie', item.movieId]"
+              class="btnTicket btn"
+              >Mua Vé</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,105 @@
+
+<body class="w3-sand">
+
+
+    <!-- Top container -->
+    <div class="w3-bar w3-top w3-blue-gray w3-large" style="z-index:4">
+        <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+        <span class="w3-bar-item w3-right">HAISA-CINEMA</span>
+    </div>
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-collapse w3-indigo w3-animate-left" style="z-index:3;width:300px; margin-top: -10px;" id="mySidebar"><br>
+        <div class="w3-container w3-row">
+            <div class="w3-col s4">
+                <img src="../../../assets/img/avatar.png" class="w3-circle w3-margin-right" style="width:46px">
+            </div>
+            <div class="w3-col s8 w3-bar">
+                <span>Welcome, {{name}}</span><br>
+                <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
+                <a  class="w3-bar-item w3-button"><i class="fa fa-user" (click)="onView()" data-toggle="tooltip" data-placement="view" title="My Information"></i></a>
+                <a (click)="logout()" class="w3-bar-item w3-button"><i class="fas fa-sign-out-alt" data-toggle="tooltip" data-placement="Logout" title="Logout !!!"></i></a>
+            </div>
+        </div>
+        <hr>
+        <div class="w3-container">
+            <h5>Dashboard</h5>
+        </div>
+        <div class="w3-bar-block">
+            <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+            <a routerLink="/admin/home" class="w3-bar-item w3-button w3-padding"><i class="fas fa-chalkboard fa-fw"></i>  Overview</a>
+            <a class="w3-dropdown-hover">
+                <button class="w3-button w3-light-blue" ><i class="fas fa-clipboard-list fa-fw"></i>Statistical</button>
+                <div class="w3-dropdown-content w3-bar-block ">
+                    <a routerLink="/admin/liststatisticaldata" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>Ticket Of Month</a>
+                    <a routerLink="/admin/ticketofshowtime" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>Ticket Of Showtime</a>
+                    <a routerLink="/admin/totalcinemaofmonth" class="w3-bar-item w3-button w3-padding"><i class="fas fa-money-bill-wave fa-fw"></i>Revenue Cinema</a>
+                </div>
+            </a>
+            <a routerLink="/admin/listmovie" class="w3-bar-item w3-button w3-padding"><i class="fa fa-film fa-fw"></i> Movie</a>
+            <a routerLink="/admin/listmember" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i> Member </a>
+            <a routerLink="/admin/listfood" class="w3-bar-item w3-button w3-padding"><i class="fas fa-hamburger fa-fw"></i>  Food</a>
+            <a routerLink="/admin/listcinema" class="w3-bar-item w3-button w3-padding"><i class="fas fa-building fa-fw"></i>  Cinema</a>
+            <a routerLink="/admin/listemployee" class="w3-bar-item w3-button w3-padding"><i class="fas fa-user-alt fa-fw"></i>  Employee</a>
+            <a routerLink="/admin/listroom" class="w3-bar-item w3-button w3-padding"><i class="	fas fa-tv fa-fw"></i>  Room</a>
+            <a routerLink="/admin/listfeedback" class="w3-bar-item w3-button w3-padding"><i class="	far fa-comment fa-fw"></i>  Feedback</a>
+            <a routerLink="/admin/listshowtimes" class="w3-bar-item w3-button w3-padding"><i class="far fa-calendar-check fa-fw"></i> Showtimes</a>
+            <a routerLink="/admin/listgenremovie" class="w3-bar-item w3-button w3-padding"><i class="fas fa-clone fa-fw" ></i>Genre Movie</a>
+            <a routerLink="/admin/listperiod" class="w3-bar-item w3-button w3-padding"><i class="fas fa-stopwatch fa-fw"></i> Period</a>
+            <a routerLink="/admin/infrastructure" class="w3-bar-item w3-button w3-padding"><i class="fas fa-city fa-fw"></i> Infrastructure</a>
+            <a routerLink="/admin/memberticket" class="w3-bar-item w3-button w3-padding"><i class="fas fa-city fa-fw"></i>Member Ticket</a>
+           
+            
+        </div>
+
+    </nav>
+
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:300px;margin-top: -10px;">
+
+        <!-- Header -->
+
+        <!-- End page content -->
+    </div>
+
+
+    <router-outlet></router-outlet>
+   
+</body>
+
+
+<script>
+    // Get the Sidebar
+    var mySidebar = document.getElementById("mySidebar");
+
+    // Get the DIV with overlay effect
+    var overlayBg = document.getElementById("myOverlay");
+
+    // Toggle between showing and hiding the sidebar, and add overlay effect
+    function w3_open() {
+        if (mySidebar.style.display === 'block') {
+            mySidebar.style.display = 'none';
+            overlayBg.style.display = "none";
+        } else {
+            mySidebar.style.display = 'block';
+            overlayBg.style.display = "block";
+        }
+    }
+
+    // Close the sidebar with the close button
+    function w3_close() {
+        mySidebar.style.display = "none";
+        overlayBg.style.display = "none";
+    }
+</script>
+
+
+<script>
+    $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip();   
+    });
+    </script>

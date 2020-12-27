@@ -1,0 +1,95 @@
+<div class="w3-main" style="margin-left:300px;margin-top:50px;">
+    <div class="w3-card-4" style="width:80%; margin-left: 120px;">
+
+        <div class=" w3-indigo" style=" text-align: center;">
+            <h1>UPDATE EMPLOYEE</h1>
+        </div>
+
+        <form action=""  [formGroup]="form" class="w3-container"  style="background-color:rgb(253, 225, 183) ;">
+
+
+            <div class="form-group">
+                <label class="w3-text-brown"><b>Name</b></label>
+                <input class="w3-input w3-border w3-sand" type="text"  formControlName="name"  [ngClass]="{'is-invalid':
+                form.get('name').touched && form.get('name').invalid}" required/>
+                <div *ngIf="form.get('name').touched && form.get('name').invalid" class="invalid-feedback">
+                    <div *ngIf="form.get('name').errors.required">Name is required</div>
+                    <div *ngIf="form.get('name').errors.pattern">Name required</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="w3-text-brown"><b>Phone: </b></label>
+                <input class="w3-input w3-border w3-sand" type="text"  formControlName="phone" [ngClass]="{'is-invalid':
+                form.get('phone').touched && form.get('phone').invalid}" required/>
+                <div *ngIf="form.get('phone').touched && form.get('phone').invalid" class="invalid-feedback">
+                    <div *ngIf="form.get('phone').errors.required">Phone is required</div>
+                    <div *ngIf="form.get('phone').errors.minlength">Phone number minimum length is 10</div>
+                    <div *ngIf="form.get('phone').errors.pattern">Phone must be a letaset 10 number</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="w3-text-brown"><b>Address: </b></label>
+                <input class="w3-input w3-border w3-sand" type="text"  formControlName="address"  [ngClass]="{'is-invalid':
+                form.get('address').touched && form.get('address').invalid}" required/>
+                <div *ngIf="form.get('address').touched && form.get('address').invalid" class="invalid-feedback"> 
+                    <div *ngIf="form.get('address').errors.required">Address is required</div>
+                    <div *ngIf="form.get('address').errors.pattern">Address required</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="w3-text-brown"> <b>Birthday: </b></label>
+                <input class="w3-input w3-border w3-sand" type="date"   formControlName="birthday">
+                <div class="invalid-feedback">
+                    <div>Birthday is required</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="w3-text-brown"><b>Id Card: </b></label>
+                <input class="w3-input w3-border w3-sand" type="text"  formControlName="idCard"[ngClass]="{'is-invalid':
+                form.get('idCard').touched && form.get('idCard').invalid}" required>
+                <div *ngIf="form.get('idCard').touched && form.get('idCard').invalid" class="invalid-feedback">
+                    <div *ngIf="form.get('idCard').errors.required">IdCard is required</div>
+                    <div *ngIf="form.get('idCard').errors.minlength">IdCard minimum length is 9</div>
+                    <div *ngIf="form.get('idCard').errors.pattern">IdCard must be a letaset 9 number</div>
+                </div>
+            </div>
+            <div class="form-group form-check">
+                <form class="w3-container w3-card-4 w3-pale-red">
+                  <label class="w3-text-brown"><b>CHOISE ROLE</b>
+        
+                  </label>
+                  <div *ngFor="let role of roles" >
+                    <input type="checkbox" (change)="onChange(role.roleId, $event.target.checked)" required/>
+                    {{role.name }}
+                  </div>
+                  <div class="invalid-feedback">
+                    <div>Role is required</div>
+                </div>
+                </form>
+              </div>
+            <div class="form-group">
+                <label class="w3-text-brown"><b>Reply Cinema: </b></label>
+                <select class="form-control"  formControlName="cinemaId" >
+                  <option *ngFor="let cinema of cinemas"   value="{{cinema.cinemaId}}">{{cinema.name}}</option>
+                </select>
+                <div class="invalid-feedback">
+                    <div>Cinema is required</div>
+                </div>
+            </div>
+
+
+            <div class=" w3-indigo" style="height:50px;text-align: center;">
+                <button type="submit" class="w3-button w3-deep-orange w3-round-xlarge" (click)="onUpdateEmployee()" [disabled]="!form.valid" style="margin-top: 5px;">UPDATE EMPLOYEE</button>
+                <button type="submit" class="w3-button w3-deep-orange w3-round-xlarge" (click)="back()" style="margin-top: 5px; margin-left: 5px;">BACK</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+<div class="w3-container w3-black w3-padding-32" style="margin-top: 50px;">
+
+</div>

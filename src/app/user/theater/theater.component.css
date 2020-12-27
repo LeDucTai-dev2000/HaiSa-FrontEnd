@@ -1,0 +1,25 @@
+.container {
+  padding: 0;
+  min-height: 300px
+}
+.theater-item {
+padding: 0px;
+background: #17141d;
+box-shadow: -1rem 0 3rem #000;
+color: #fff;
+}
+.card-img-top {
+  width: 100%;
+}
+.item {
+  padding: 45px 25px 0px 25px;
+}
+.btn {
+  margin: 0px 5px 0px 5px;
+  background-image: linear-gradient(to bottom,#0004fffd,#2f93e5cb);
+  width: 80px;
+  color: #fff;
+}
+.card-body{
+  min-height: 170px
+}

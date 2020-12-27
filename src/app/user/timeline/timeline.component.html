@@ -1,0 +1,42 @@
+<div class="container">
+  <hr class="thick" />
+  <div class="text-center coming">
+    <h2>LỊCH CHIẾU</h2>
+  </div>
+  <div *ngFor="let item of showtime; let i = index">
+    <hr class="line" />
+    <div class="row hay">
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h2>{{ item.cinemaName }}</h2>
+            <p>{{ item.address }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 col-sm-6">
+        <div class="showtime-movie">
+          <div class="row" *ngFor="let date of item.periods">
+            <div class="col-md-2">
+            <h4 class="date">{{ date.date | date: "dd/MM/yyyy" }}</h4>
+            </div>
+            <div class="col-md-9">
+            <div *ngFor="let room of date.rooms">
+
+              <div class="row">
+              <h3 class="room">R{{ room.room.roomName }}</h3>
+              <div *ngFor="let period of room.periods">
+                <button
+                  (click)="choose(period.showtimeId)"
+                  class="btn showtime-item"
+                >
+                  {{ period.startTime }}
+                </button>
+              </div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

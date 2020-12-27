@@ -1,0 +1,45 @@
+<div class="cont">
+<h2 class="text-white">Đang chiếu</h2>
+  <div class="row wow">
+    <div class="col-6 col-md-6 col-sm-12 hay" *ngFor="let movie of pageOfItems">
+<!-- snow rain effect  -->
+      <div class="hoverr">
+<!-- snow rain effect  -->
+        <div class="row no-gutters movie">
+          <div class="col-md-3.5 col-sm-4 img">
+            <img
+              src="{{ movie.thumbnail }}"
+              class="card-img"
+              alt="..."
+              style="width: 100%; height: 100%"
+            />
+          </div>
+          <div class="col-md-8.5 col-sm-8 content">
+            <div class="card-body">
+              <h3 class="card-title">{{ movie.movieName }}</h3>
+              <p class="card-text">{{ movie.description | slice : 0 : 200 }}... <small> Xem thêm</small></p>
+              <p class="card-text">
+                <small class="text-muted">{{ movie.duration }} phút</small>
+              </p>
+              <div class="nut">
+              <app-viewtrailer [trailer]="movie.trailer"></app-viewtrailer>
+              <a
+                [routerLink]="['/single-movie', movie.movieId]"
+                class="btnTicket btn"
+                >Mua Vé</a
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center">
+  <jw-pagination
+    [items]="movies"
+    (changePage)="onChangePage($event)"
+    pageSize="6"
+  ></jw-pagination>
+</div>

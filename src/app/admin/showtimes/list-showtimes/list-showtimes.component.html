@@ -1,0 +1,94 @@
+<div class="w3-main" style="margin-left:305px;margin-top:50px;">
+    <strong style="margin-left: 500px; font-size: 40px;font-family: 'Courier New', Courier, monospace; color: rgb(247, 117, 43);">SHOWTIMES</strong>
+    <div class="container">
+        <button type="button" class="btn btn-success" style="margin-right: 500px;margin-bottom: 10px;" routerLink="/admin/listshowtimes/add"  [disabled] = "check">ADD SHOWTIMES</button>
+        <mat-tab-group>
+           
+            <mat-tab label="The showtimes is still active">
+                <form class="example" style="margin-left: 900px;max-width:300px ;margin-top: 5px;margin-bottom: 5px;">
+                    <input type="text" placeholder="Search.." name=""  [(ngModel)]="name1"  [ngModelOptions]="{ standalone: true }" >
+                    <button type="submit" (click)="onSearch(name1)" ><i class="fa fa-search"></i></button>
+                  </form>
+                <div class="form-group">
+
+                </div>
+                <table class="table table-hover table-bordered table-info">
+                    <thead class="thead-dark">
+                        <tr style="text-align: center;">
+                            <th>Movie</th>
+                            <th>Create By</th>
+                            <th>Period</th>
+                            <th>Room</th>
+                            <th>Cinema</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let showtime of showtimes1 |   paginate: {id:'listing_pagination1', itemsPerPage: 10, currentPage: p,totalItems: totalRecord}">
+
+                            <td>{{showtime.movie.movieName}}</td>
+                            <td>{{showtime.employee.name}}</td>
+                            <td>{{showtime.period.startTime}}</td>
+                            <td>{{showtime.room.roomName}}</td>
+                            <td>{{showtime.room.cinema.name}}
+                            <td>{{showtime.date}}</td>
+                            <td>
+                              <button type="button" class="btn btn-primary" (click)="onUpdate(this.showtime)" style="margin-right: 5px;"  [disabled] = "check">Update</button>
+                              <button type="button" class="btn btn-danger" (click)="onDelete(this.showtime)"  [disabled] = "check">Delete</button>
+                          </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <pagination-controls (pageChange)="p = $event" previousLabel="Previous" nextLabel="Next" maxSize="5" directionLinks="true" id="listing_pagination1"></pagination-controls>
+            </mat-tab>
+
+            <mat-tab label="The showtimes is no active">
+                <form class="example" style="margin-left: 900px;max-width:300px ;margin-top: 5px;margin-bottom: 5px;">
+                    <input type="text" placeholder="Search.." name=""  [(ngModel)]="name2"  [ngModelOptions]="{ standalone: true }" >
+                    <button type="submit" (click)="onSearch2(name2)" ><i class="fa fa-search"></i></button>
+                  </form>
+                <div class="form-group">
+                </div>
+                <table class="table table-hover table-bordered table-info">
+                    <thead class="thead-dark">
+                        <tr style="text-align: center;">
+
+                            <th>Movie</th>
+                            <th>Employee</th>
+                            <th>Period</th>
+                            <th>Room</th>
+                            <th>Cinema</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let showtime of showtimes2 |  paginate: {id:'listing_pagination2', itemsPerPage: 10, currentPage: p2,totalItems: totalRecord2}">
+
+                            <td>{{showtime.movie.movieName}}</td>
+                            <td>{{showtime.employee.name}}</td>
+                            <td>{{showtime.period.startTime}}</td>
+                            <td>{{showtime.room.roomName}}</td>
+                            <td>{{showtime.room.cinema.name}}
+                            <td>{{showtime.date}}</td>
+                            <td>
+                              <button type="button" class="btn btn-primary" (click)="onUpdate(this.showtime)" style="margin-right: 5px;"  [disabled] = "check">Update</button>
+                              <button type="button" class="btn btn-danger" (click)="onDelete(this.showtime)"  [disabled] = "check">Delete</button>
+                          </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <pagination-controls (pageChange)="p2 = $event" previousLabel="Previous" nextLabel="Next" maxSize="5" directionLinks="true" id="listing_pagination2"></pagination-controls>
+            </mat-tab>
+
+        </mat-tab-group>
+    </div>
+</div>
+<div class="w3-container w3-black w3-padding-32" style="margin-top: 350px;">
+
+</div>

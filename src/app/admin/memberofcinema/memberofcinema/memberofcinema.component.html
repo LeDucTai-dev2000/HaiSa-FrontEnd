@@ -1,0 +1,150 @@
+<div class="w3-main" style="margin-left:305px;margin-top:50px;">
+    <strong style="margin-left: 400px; font-size: 40px; font-family: 'Courier New', Courier, monospace; color: rgb(247, 117, 43);">MEMBER TICKET</strong>
+    <div class="container">
+        <mat-tab-group>
+            <!-- Cinema 1  -->
+            <mat-tab label="HaiSa Nam Kì Khởi Nghĩa">
+                <form class="example" style="margin-left: 900px;max-width:300px ;margin-top: 5px;margin-bottom: 5px;">
+                    <input type="text" placeholder="Search.." name=""  [(ngModel)]="name1"  [ngModelOptions]="{ standalone: true }" >
+                    <button type="submit" (click)="onSearch(name1)" ><i class="fa fa-search"></i></button>
+                  </form>
+                <table class="table table-hover table-bordered table-info" id="excel-table">
+                    <thead class="thead-dark">
+                        <tr style="text-align: center;">
+                            <th>Member Name</th>
+                            <th>Movie Name</th>
+                            <th>Start Time</th>
+                            <th>Date</th>
+                            <th>Total</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of cinema1 |   paginate: {id:'listing_pagination1', itemsPerPage: 10, currentPage: p1,totalItems: totalRecord1}" style="text-align: center;">
+                            <td>{{data.member.memberName}}</td>
+                            <td>{{data.showtimes.movie.movieName}}</td>
+                            <td>{{data.showtimes.period.startTime}}</td>
+                            <td>{{data.date | date:'dd/MM/yyyy'}}</td>
+                            <td>{{data.total}}</td>
+                            <td style="text-align: center" >
+                                <button type="button" class="btn btn-success" style="margin-right: 5px;" (click)="onView(this.data)">View</button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <pagination-controls (pageChange)="p1 = $event" previousLabel="Previous" nextLabel="Next" maxSize="5" directionLinks="true" id="listing_pagination1"></pagination-controls>
+
+              
+
+            </mat-tab>
+
+            <!-- Cinema 2 -->
+            <mat-tab label="HaiSa Quang Trung">
+                <form class="example" style="margin-left: 900px;max-width:300px ;margin-top: 5px;margin-bottom: 5px;">
+                    <input type="text" placeholder="Search.." name=""  [(ngModel)]="name2"  [ngModelOptions]="{ standalone: true }" >
+                    <button type="submit" (click)="onSearch2(name2)" ><i class="fa fa-search"></i></button>
+                  </form>
+                <table class="table table-hover table-bordered table-info" id="excel-table">
+                    <thead class="thead-dark">
+                        <tr style="text-align: center;">
+                            <th>Member Name</th>
+                            <th>Movie Name</th>
+                            <th>Start Time</th>
+                            <th>Date</th>
+                            <th>Total</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of cinema2 |   paginate: {id:'listing_pagination2', itemsPerPage: 10, currentPage: p2,totalItems: totalRecord2}" style="text-align: center;">
+                            <td>{{data.member.memberName}}</td>
+                            <td>{{data.showtimes.movie.movieName}}</td>
+                            <td>{{data.showtimes.period.startTime}}</td>
+                            <td>{{data.date | date:'dd/MM/yyyy'}}</td>
+                            <td>{{data.total}}</td>
+                            <td style="text-align: center" >
+                                <button type="button" class="btn btn-success" style="margin-right: 5px;" (click)="onView(this.data)">View</button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <pagination-controls (pageChange)="p2 = $event" previousLabel="Previous" nextLabel="Next" maxSize="5" directionLinks="true" id="listing_pagination2"></pagination-controls>
+            </mat-tab>
+
+            <!-- Cinema 3 -->
+            <mat-tab label="HaiSa Nguyễn Kiệm">
+                <form class="example" style="margin-left: 900px;max-width:300px ;margin-top: 5px;margin-bottom: 5px;">
+                    <input type="text" placeholder="Search.." name=""  [(ngModel)]="name3"  [ngModelOptions]="{ standalone: true }" >
+                    <button type="submit" (click)="onSearch3(name3)" ><i class="fa fa-search"></i></button>
+                  </form>
+                <table class="table table-hover table-bordered table-info" id="excel-table">
+                    <thead class="thead-dark">
+                        <tr style="text-align: center;">
+                            <th>Member Name</th>
+                            <th>Movie Name</th>
+                            <th>Start Time</th>
+                            <th>Date</th>
+                            <th>Total</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of cinema3 |   paginate: {id:'listing_pagination3', itemsPerPage: 10, currentPage: p3,totalItems: totalRecord3}" style="text-align: center;">
+                            <td>{{data.member.memberName}}</td>
+                            <td>{{data.showtimes.movie.movieName}}</td>
+                            <td>{{data.showtimes.period.startTime}}</td>
+                            <td>{{data.date | date:'dd/MM/yyyy'}}</td>
+                            <td>{{data.total}}</td>
+                            <td style="text-align: center" >
+                                <button type="button" class="btn btn-success" style="margin-right: 5px;" (click)="onView(this.data)">View</button>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+                <pagination-controls (pageChange)="p3 = $event" previousLabel="Previous" nextLabel="Next" maxSize="5" directionLinks="true" id="listing_pagination3"></pagination-controls>
+            </mat-tab>
+
+            <!-- Cinema 4 -->
+            <mat-tab label="HaiSa Hoàng Sa">
+                <form class="example" style="margin-left: 900px;max-width:300px ;margin-top: 5px;margin-bottom: 5px;">
+                    <input type="text" placeholder="Search.." name=""  [(ngModel)]="name4"  [ngModelOptions]="{ standalone: true }" >
+                    <button type="submit" (click)="onSearch4(name4)" ><i class="fa fa-search"></i></button>
+                  </form>
+                <table class="table table-hover table-bordered table-info" id="excel-table">
+                    <thead class="thead-dark">
+                        <tr style="text-align: center;">
+                            <th>Member Name</th>
+                            <th>Movie Name</th>
+                            <th>Start Time</th>
+                            <th>Date</th>
+                            <th>Total</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of cinema4 |   paginate: {id:'listing_pagination4', itemsPerPage: 10, currentPage: p4,totalItems: totalRecord4}" style="text-align: center;">
+                            <td>{{data.member.memberName}}</td>
+                            <td>{{data.showtimes.movie.movieName}}</td>
+                            <td>{{data.showtimes.period.startTime}}</td>
+                            <td>{{data.date | date:'dd/MM/yyyy'}}</td>
+                            <td>{{data.total}}</td>
+                            <td style="text-align: center" >
+                                <button type="button" class="btn btn-success" style="margin-right: 5px;" (click)="onView(this.data)">View</button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <pagination-controls (pageChange)="p4 = $event" previousLabel="Previous" nextLabel="Next" maxSize="5" directionLinks="true" id="listing_pagination4"></pagination-controls>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>
+<div class="w3-container w3-black w3-padding-32" style="margin-top: 400px;">
+
+</div>
+

@@ -1,0 +1,32 @@
+.container{
+  color: #fff;
+  padding: 30px 85px;
+  min-height: 300px;
+}
+.btnEdit{
+  color: #fff;
+  background: #e52f70;
+  width: 145px;
+  height: 40px;
+  margin-top: 10px;
+}
+.btnEdit:hover{
+  background: #ff8a00;
+  transform: translateY(2px);
+}
+.btnEdit:disabled{
+  background: gray;
+}
+.nhap{
+  width: 300px;
+}
+.fail{
+  color:#fff;
+  background: rgba(255, 2, 2, 0.3);
+  border: 1px solid red;
+  border-radius: 5px;
+  margin: 0px 20px 15px 0px;
+  padding: 15px;
+  width: 475px;
+}
+

@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="title">
+    <h2>QUÊN MẬT KHẨU</h2>
+  </div>
+
+  <form [formGroup]="forgot" (ngSubmit)="getEmail()">
+    <div *ngIf="saiMail">
+      <div class="fail text-center">
+        <strong
+          >EMAIL CHƯA ĐƯỢC SỬ DỤNG TRƯỚC ĐÓ. VUI LÒNG THAY ĐỔI EMAIL.</strong
+        >
+      </div>
+    </div>
+    <div *ngIf="failMail">
+      <div class="fail text-center">
+        <strong>GỞI MAIL THẤT BẠI</strong>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-1">
+        <label for="exampleFormControlSelect2">Email</label>
+      </div>
+      <div class="col-md-5">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="email"
+          [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+        />
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">Không được để trống Email</div>
+          <div *ngIf="f.email.errors.email">Email sai định dạng</div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btnEdit">CẤP LẠI MẬT KHẨU</button>
+  </form>
+</div>

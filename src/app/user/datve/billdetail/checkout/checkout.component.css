@@ -1,0 +1,21 @@
+.container{
+  color: #fff;
+  padding: 50px 0px 60px 0px;
+}
+.btnback{
+  color: #fff;
+  background:#ff8a00;
+  height: 50px;
+  width: 170px;
+  border-radius: 5px;
+}
+.btnback:hover{
+  background:#e52e71;
+  transform: translateY(4px);
+  border-radius: 35px;
+}
+.back{
+  padding: 30px 0px;
+
+}
+

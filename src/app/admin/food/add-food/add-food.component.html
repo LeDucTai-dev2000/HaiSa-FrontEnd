@@ -1,0 +1,58 @@
+<div class="w3-main" style="margin-left:300px;margin-top:50px;">
+    <div class="w3-card-4" style="width:80%; margin-left: 120px;">
+
+        <div class=" w3-indigo" style=" text-align: center;">
+            <h1>ADD FOOD</h1>
+        </div>
+
+        <form action="" class="w3-container" ngNativeValidate style="background-color:rgb(253, 225, 183) ;" [formGroup]="formcheck">
+            <div class="form-group">
+                <label class="w3-text-brown"><b>Name</b></label>
+                <input class="w3-input w3-border w3-sand" type="text" [(ngModel)]="name" formControlName="Name" [ngClass]="{'is-invalid':
+              formcheck.get('Name').touched && formcheck.get('Name').invalid}" />
+                <div *ngIf="formcheck.get('Name').touched && formcheck.get('Name').invalid" class="invalid-feedback">
+                    <div *ngIf="formcheck.get('Name').errors.required">Name is required</div>
+                    <div *ngIf="formcheck.get('Name').errors.pattern">Name required</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="w3-text-brown"><b>Price</b></label>
+                <input class="w3-input w3-border w3-sand" type="text" [(ngModel)]="price" formControlName="Price" [ngClass]="{'is-invalid':
+              formcheck.get('Price').touched && formcheck.get('Price').invalid}" />
+                <div *ngIf="formcheck.get('Price').touched && formcheck.get('Price').invalid" class="invalid-feedback">
+                    <div *ngIf="formcheck.get('Price').errors.required">Price is required</div>
+                    <div *ngIf="formcheck.get('Price').errors.pattern">Price is number</div>
+                </div>
+            </div>
+            <div class=" w3-indigo" style="height:50px;text-align: center;">
+                <button type="submit" class="w3-button w3-deep-orange w3-round-xlarge" (click)="onaddFood()" [disabled]="!formcheck.valid" style="margin-top: 5px;">ADD FOOD</button>
+                <button type="submit" class="w3-button w3-deep-orange w3-round-xlarge" (click)="back()" style="margin-top: 5px; margin-left: 5px;">BACK</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="w3-container w3-black w3-padding-32" style="margin-top: 450px;">
+
+</div>
+
+
+
+<!-- <div class="w3-main" style="margin-left:305px;margin-top:50px;" >
+    <form method="POST">
+      <legend class="text-center">Add Food</legend>
+
+      <div class="form-group">
+        <label>Name: </label>
+        <input type="text" class="form-control" [(ngModel)]="name" [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="form-group">
+        <label>Price:  </label>
+        <input type="number" class="form-control" [(ngModel)]="price" [ngModelOptions]="{standalone: true}">
+      </div>
+
+
+      <button type="submit" class="btn btn-primary" (click)="onaddFood()">Add Food</button>
+    </form>
+ </div> -->

@@ -1,0 +1,38 @@
+.container {
+  color: #fff;
+}
+.bill {
+  border: 1px solid #fff;
+  margin: 0 30px 0 70px
+}
+.bill1{
+  padding: 20px
+}
+.thick {
+  height: 1px;
+  background: #fff;
+  border-radius: 5px;
+  margin: 0 20px 10px 20px;
+}
+.btnDel{
+  margin: 5px 40px 5px 0px;
+  background: #ff3300;
+  width: 150px;
+  height: 35px;
+  color: #fff;
+  border-radius: 35px;
+}
+.btnDel:hover {
+transform: scale(1.05);
+}
+.seat{
+  float: right;
+  padding-left: 5px;
+}
+.paypal{
+  height: 10px;
+  margin-bottom: 30px;
+}
+.nut{
+  padding: 60px 30px 30px 30px
+}

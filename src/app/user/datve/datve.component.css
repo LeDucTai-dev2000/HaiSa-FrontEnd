@@ -1,0 +1,102 @@
+.container {
+  padding-top: 40px;
+  color: #fff;
+}
+.thumbnails{
+  height: 250px;
+  width: 100px;
+}
+.img{
+  height: 100%;
+  width: 100%;
+}
+ol, ul {
+	list-style: none;
+}
+.movie-item li {
+  padding-left: 50px;
+  padding-bottom: 30px;
+}
+.movie-item{
+  padding-left: 50px;
+}
+.info-movie {
+  padding: 10px;
+}
+.btn {
+  margin: 5px 40px 5px 30px;
+  background:#ff8a00;
+  width: 120px;
+  height: 40px;
+  color: #fff;
+}
+.btn:hover {
+  background: #e52f70;
+  transform: translateY(4px);
+}
+.input-group {
+  padding-top: 20px;
+}
+.ticket {
+  padding-top:30px;
+}
+.ticket-table {
+  padding-left: 40px;
+}
+.table {
+  color: #fff;
+  background: #17141d;
+  box-shadow: -1rem 0 3rem #000;
+}
+.buttons_added {
+  opacity:1;
+  display:inline-block;
+  display:-ms-inline-flexbox;
+  display:inline-flex;
+  white-space:nowrap;
+  vertical-align:top;
+}
+.is-form {
+  overflow:hidden;
+  position:relative;
+  background-color:#f9f9f9;
+  height:2.2rem;
+  width:1.9rem;
+  padding:0;
+  text-shadow:1px 1px 1px #fff;
+  border:1px solid #ddd;
+}
+.is-form:focus,.input-text:focus {
+  outline:none;
+}
+.is-form.minus {
+  border-radius:4px 0 0 4px;
+}
+.is-form.plus {
+  border-radius:0 4px 4px 0;
+}
+.input-qty {
+  background-color:#fff;
+  height:2.2rem;
+  text-align:center;
+  font-size:1rem;
+  display:inline-block;
+  vertical-align:top;
+  margin:0;
+  border-top:1px solid #ddd;
+  border-bottom:1px solid #ddd;
+  border-left:0;
+  border-right:0;
+  padding:0;
+}
+.input-qty::-webkit-outer-spin-button,.input-qty::-webkit-inner-spin-button {
+  -webkit-appearance:none;
+  margin:0;
+}
+.fail{
+  color:#fff;
+  background: rgba(255, 2, 2, 0.3);
+  border: 1px solid red;
+  border-radius: 5px;
+  padding-top: 15px;
+}

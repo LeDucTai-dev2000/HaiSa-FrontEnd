@@ -1,0 +1,64 @@
+.total {
+  color: #fff;
+  padding: 30px 0px 0px 2px;
+}
+.card-body{
+  padding-right: 0px;
+}
+.btnpay{
+  margin: 5px 40px 5px 30px;
+  background:#e52f70;
+  width: 150px;
+  height: 40px;
+  color: #fff;
+}
+.btnpay:hover{
+  transform: translateY(4px);
+  background:#ff8a00;
+}
+.grqty{
+padding: 0px 2px 0px 10px;
+float: right;
+}
+.qty{
+  float: left;
+  padding: 0px 0px 0px 20px;
+}
+.btnqty{
+  margin-right: 10px;
+  background: #e52f70;
+  width: 45px;
+  height: 40px;
+  color: #fff;
+}
+.btnqty:hover {
+  background: #ff8a00
+}
+.textqty{
+  padding-top: 6px;
+  width: 125px;
+  margin:0px;
+  float: left;
+}
+.btn_food{
+  margin: 0px 10px 10px 0px;
+  background: #ff8a00;
+  width: 140px;
+  height: 40px;
+  color: #fff;
+}
+.btn_food:hover{
+  background: #e52f70
+}
+.tableTot{
+  border: 1px solid #fff;
+  border-radius: 7px;
+  margin-bottom: 20px;
+  padding: 10px 0px 0px 50px;
+}
+.table{
+  color: #fff;
+}
+.pay{
+  padding: 35px 10px 0px 0px;
+}

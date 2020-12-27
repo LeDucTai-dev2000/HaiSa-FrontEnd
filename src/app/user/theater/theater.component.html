@@ -1,0 +1,33 @@
+<div class="container">
+  <section class="text-center">
+    <div class="row wow" >
+      <div class="col-lg-4 col-md-4 item" *ngFor="let cinema of cinemas">
+        <div class="card theater-item">
+
+          <img
+            class="card-img-top"
+            src="../../../assets/img/cine.jpg"
+            alt="Card image"
+          />
+          <div class="card-body">
+            <h4 class="card-title">{{ cinema.name }}</h4>
+            <p class="card-text">{{ cinema.address }}</p>
+            <iframe
+              src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.facebook.com%2FHaiSa-Cinema-104919914803445&layout=button&size=large&width=87&height=28&appId"
+              width="87"
+              height="28"
+              style="border: none; overflow: hidden"
+              scrolling="no"
+              frameborder="0"
+              allowfullscreen="true"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8 col-md-8 item">
+        <!-- <app-cinemashowtime [cinemaid]= cinema.cinemaId></app-cinemashowtime> -->
+      </div>
+    </div>
+  </section>
+</div>

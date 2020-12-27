@@ -1,0 +1,227 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 200px;
+    background-color: #100e17;
+  }
+  #login .container #login-row #login-column #login-box {
+    margin: 20px 0px;
+    max-width: 1000px;
+    min-height: 400px;
+    background-color: whitesmoke;
+    background-color: #17141d;
+    padding-top: 20px;
+    box-shadow: -1rem 0 3rem #000;
+  }
+  #login .container #login-row #login-column #login-box #login-form {
+    padding: 20px;
+  }
+  #login
+    .container
+    #login-row
+    #login-column
+    #login-box
+    #login-form
+    #register-link {
+    margin-top: -85px;
+  }
+  .button-design .btn {
+    color: aliceblue;
+    margin-right: 5px;
+  }
+  .invalid-feedback{
+    color:rgba(255, 60, 0, 0.884);
+    font-size: smaller;
+  }
+  .errors{
+    color: red;
+    font-size: smaller;
+  }
+  .customBlank{
+    color:red;
+    font-weight: bold;
+    font-size: 10px;
+  }
+  .btnContainer{
+
+    text-align: center;
+  }
+  .btnEffect{
+    width: 200px;
+    margin: 20px;
+    float: left;
+    box-shadow: -1rem 0 3rem #000;
+  }
+  .btnEffect a{
+    position: relative;
+    display: inline-block;
+    color:#e52e71;
+    background: #17141d;
+    font-size: 25px;
+    padding: 10px 30px;
+    letter-spacing: 2px;
+    width: 100%;
+  }
+  .btnEffect a:hover{
+    color: #ff8a00;
+    text-decoration: none;
+  }
+  .btnEffect a span{
+    display: block;
+    position: absolute;
+    background: #e52e71;
+  }
+  /* laze in the left :v */
+  .btnEffect a span:nth-child(1){
+    left: 0;
+    bottom: 0;
+    width: 3px;
+    height: 100%;
+/* - transform dung` de thay doi hinh` dang',vi tri,kich thuoc, xoay phan tu theo cac chieu`,
+    - Khi khai bao scale (truc. X truc. Y) thi se tao ra 1 duong theo huong'
+    - parameter se tuong ung' voi do. dai cua the?,
+    - vi du scaleY(1) se tao ra 1 tia laze theo chieu` doc.
+    */
+    transform: scaleY(0);
+    /* transform-orign dung` de? tao. hieu. ung' neo
+    vi du transform-origin: top; lay diem neo tu top xuong
+    */
+    transform-origin: top;
+    /* transition dung de tao hieu ung chuyen dong,
+    vi du khi hover vao no se chuyen dong nhanh hay cham tuy minh` khai bao */
+    transition: transform 0.3s;
+  }
+  .btnEffect a:hover span:nth-child(1){
+
+    transform: scaleY(1);
+    transform-origin:bottom;
+    transition: transform 0.8s;
+
+  }
+  /* laze in the bottom  :v */
+  .btnEffect a span:nth-child(2){
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s;
+  }
+  .btnEffect a:hover span:nth-child(2){
+
+    transform: scaleX(1);
+    transform-origin:left;
+    transition: transform 0.8s;
+  }
+  /* laze in the right */
+  .btnEffect a span:nth-child(3){
+    right: 0;
+    bottom: 0;
+    width: 3px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s;
+  }
+  .btnEffect a:hover span:nth-child(3){
+    transform: scaleY(1);
+    transform-origin:bottom;
+    transition: transform 0.8s;
+  }
+  h1{
+    color:#e52e71!important;
+  }
+  span{
+    color:#ff8a00!important;
+  }
+  /* laze in the top */
+  .btnEffect a span:nth-child(4){
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .btnEffect a:hover span:nth-child(4){
+    transform: scaleX(1);
+    transform-origin:right;
+    transition: transform 0.8s;
+  }
+  mat-form-field{
+    width: 100%;
+    color: #ff8a00;
+  }
+  ::ng-deep .mat-form-field-label{
+    color:#ff8a00 !important;
+    font-size: 17px!important;
+}
+::ng-deep .mat-form-field-underline{
+  background-color:#ff8a00 !important;
+}
+::ng-deep .mat-form-field-placeholder{
+  color:red!important;
+}
+  /* ----------------------------------------------------- REGISTER ---------------------------------------------------------------------------------------------------------- */
+  .navv{
+    background: rgba(0,0,0,0.5);
+    /* background: linear-gradient(to top, #ff8a00,#e52f70); */
+    padding: 7px 5px 10px 40px;
+    box-shadow:0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+  }
+  .imglg {
+    width: 110px;
+  }
+  .imgUser {
+    width: 35px;
+  }
+  .tk {
+    background: rgba(0,0,0,0.5);
+  }
+
+  .col_white_amrc { color:#FFF;}
+  footer { width:100%; background-color:#100e17; min-height:250px; padding:10px 0px 25px 0px ;}
+  .pt2 { padding-top:40px ; margin-bottom:20px ;}
+  footer p { font-size:13px; color:#CCC; padding-bottom:0px; margin-bottom:8px;}
+  .mb10 { padding-bottom:15px ;}
+  .footer_ul_amrc { margin:0px ; list-style-type:none ; font-size:14px; padding:0px 0px 10px 0px ; }
+  .footer_ul_amrc li {padding:0px 0px 5px 0px;}
+  .footer_ul_amrc li a{ color:#CCC;}
+  .footer_ul_amrc li a:hover{ color:#fff; text-decoration:none;}
+  .fleft { float:left;}
+  .padding-right { padding-right:10px; }
+
+  .footer_ul2_amrc {margin:0px; list-style-type:none; padding:0px;}
+  .footer_ul2_amrc li p { display:table; }
+  .footer_ul2_amrc li a:hover { text-decoration:none;}
+  .footer_ul2_amrc li i { margin-top:5px;}
+
+  .bottom_border {  padding: 5px 40px 10px 80px;}
+  .foote_bottom_ul_amrc {
+    list-style-type:none;
+    padding:0px;
+    display:table;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-bottom: 10px;
+    margin-left: auto;
+  }
+  .foote_bottom_ul_amrc li { display:inline;}
+  .foote_bottom_ul_amrc li a { color:#999; margin:0 12px;}
+
+  .social_footer_ul { display:table; margin:15px auto 0 auto; list-style-type:none;  }
+  .social_footer_ul li { padding-left:20px; padding-top:10px; float:left; }
+  .social_footer_ul li a { color:#CCC; border:1px solid #CCC; padding:8px;border-radius:50%;}
+  .social_footer_ul li i {  width:20px; height:20px; text-align:center;}
+
+  .textcp { padding-top:15px}
+
+  .thick {
+    height: 1px;
+    margin: 4rem 0;
+    background-image: linear-gradient(90deg,#ff8a00,#e52e71);
+    border-radius: 5px;
+    margin: 0 80px 0 80px;
+  }

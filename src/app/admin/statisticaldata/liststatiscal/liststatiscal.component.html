@@ -1,0 +1,283 @@
+<div class="w3-main" style="margin-left:305px;margin-top:50px;">
+    <strong style="margin-left: 400px; font-size: 40px;font-family: 'Courier New', Courier, monospace; color: rgb(247, 117, 43);">TICKET OF MONTH</strong>
+    <div class="container">
+        <mat-tab-group>
+            <!-- january -->
+            <mat-tab label="January">
+                <table class="table table-hover table-bordered table-info" id="excel-table-1">
+                    <thead class="thead-dark">
+                        <tr style="text-align: center;">
+                            <th>Movie Name</th>
+                            <th>Ticket Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of month1 |   paginate: {id:'listing_pagination1', itemsPerPage: 10, currentPage: p1,totalItems: totalRecord1}">
+                            <td>{{data.movieName}}</td>
+                            <td>{{data.ticketQuantity}}</td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div>
+                    <button style="margin-left: 970px;margin-bottom: 10px;" (click)="exportexcel()" class="btn btn-success">Export To Excel</button>
+                </div>
+                <pagination-controls (pageChange)="p1 = $event" previousLabel="Previous" nextLabel="Next" maxSize="5" directionLinks="true" id="listing_pagination1"></pagination-controls>
+            </mat-tab>
+            <!-- february -->
+            <mat-tab label="February">
+                <table class="table table-hover table-bordered table-info" id="excel-table-2">
+                    <thead class="thead-dark">
+                        <tr style="text-align: center;">
+                            <th>Movie Name</th>
+                            <th>Ticket Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of month2 |   paginate: {id:'listing_pagination2', itemsPerPage: 10, currentPage: p2,totalItems: totalRecord2}">
+                            <td>{{data.movieName}}</td>
+                            <td>{{data.ticketQuantity}}</td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div>
+                    <button style="margin-left: 970px;margin-bottom: 10px;" (click)="exportexcel2()" class="btn btn-success">Export To Excel</button>
+                </div>
+                <pagination-controls (pageChange)="p2 = $event" previousLabel="Previous" nextLabel="Next" maxSize="5" directionLinks="true" id="listing_pagination2"></pagination-controls>
+            </mat-tab>
+
+            <!-- March -->
+            <mat-tab label="March">
+                <table class="table table-hover table-bordered table-info" id="excel-table-3">
+                    <thead class="thead-dark">
+                        <tr style="text-align: center;">
+                            <th>Movie Name</th>
+                            <th>Ticket Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of month3 |   paginate: {id:'listing_pagination3', itemsPerPage: 10, currentPage: p3,totalItems: totalRecord3}">
+                            <td>{{data.movieName}}</td>
+                            <td>{{data.ticketQuantity}}</td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div>
+                    <button style="margin-left: 970px;margin-bottom: 10px;" (click)="exportexcel3()" class="btn btn-success">Export To Excel</button>
+                </div>
+                <pagination-controls (pageChange)="p3 = $event" previousLabel="Previous" nextLabel="Next" maxSize="5" directionLinks="true" id="listing_pagination3"></pagination-controls>
+            </mat-tab>
+            <!-- April -->
+            <mat-tab label="April">
+                <table class="table table-hover table-bordered table-info" id="excel-table-4">
+                    <thead class="thead-dark">
+                        <tr style="text-align: center;">
+                            <th>Movie Name</th>
+                            <th>Ticket Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of month4 |   paginate: {id:'listing_pagination4', itemsPerPage: 10, currentPage: p4,totalItems: totalRecord4}">
+                            <td>{{data.movieName}}</td>
+                            <td>{{data.ticketQuantity}}</td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div>
+                    <button style="margin-left: 970px;margin-bottom: 10px;" (click)="exportexcel4()" class="btn btn-success">Export To Excel</button>
+                </div>
+                <pagination-controls (pageChange)="p4 = $event" previousLabel="Previous" nextLabel="Next" maxSize="5" directionLinks="true" id="listing_pagination4"></pagination-controls>
+            </mat-tab>
+
+            <!-- May -->
+            <mat-tab label="May">
+                <table class="table table-hover table-bordered table-info" id="excel-table-5">
+                    <thead class="thead-dark">
+                        <tr style="text-align: center;">
+                            <th>Movie Name</th>
+                            <th>Ticket Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of month5 |   paginate: {id:'listing_pagination5', itemsPerPage: 10, currentPage: p5,totalItems: totalRecord5}">
+                            <td>{{data.movieName}}</td>
+                            <td>{{data.ticketQuantity}}</td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div>
+                    <button style="margin-left: 970px;margin-bottom: 10px;" (click)="exportexcel5()" class="btn btn-success">Export To Excel</button>
+                </div>
+                <pagination-controls (pageChange)="p5 = $event" previousLabel="Previous" nextLabel="Next" maxSize="5" directionLinks="true" id="listing_pagination5"></pagination-controls>
+            </mat-tab>
+            <!-- June -->
+            <mat-tab label="June">
+                <table class="table table-hover table-bordered table-info" id="excel-table-6">
+                    <thead class="thead-dark">
+                        <tr style="text-align: center;">
+                            <th>Movie Name</th>
+                            <th>Ticket Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of month6 |   paginate: {id:'listing_pagination6', itemsPerPage: 10, currentPage: p6,totalItems: totalRecord6}">
+                            <td>{{data.movieName}}</td>
+                            <td>{{data.ticketQuantity}}</td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div>
+                    <button style="margin-left: 970px;margin-bottom: 10px;" (click)="exportexcel6()" class="btn btn-success">Export To Excel</button>
+                </div>
+                <pagination-controls (pageChange)="p6 = $event" previousLabel="Previous" nextLabel="Next" maxSize="5" directionLinks="true" id="listing_pagination6"></pagination-controls>
+            </mat-tab>
+            <!-- July -->
+            <mat-tab label="July">
+                <table class="table table-hover table-bordered table-info" id="excel-table-7">
+                    <thead class="thead-dark">
+                        <tr style="text-align: center;">
+                            <th>Movie Name</th>
+                            <th>Ticket Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of month7 |   paginate: {id:'listing_pagination7', itemsPerPage: 10, currentPage: p7,totalItems: totalRecord7}">
+                            <td>{{data.movieName}}</td>
+                            <td>{{data.ticketQuantity}}</td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div>
+                    <button style="margin-left: 970px;margin-bottom: 10px;" (click)="exportexcel7()" class="btn btn-success">Export To Excel</button>
+                </div>
+                <pagination-controls (pageChange)="p7 = $event" previousLabel="Previous" nextLabel="Next" maxSize="5" directionLinks="true" id="listing_pagination7"></pagination-controls>
+            </mat-tab>
+            <!-- August -->
+            <mat-tab label="August">
+                <table class="table table-hover table-bordered table-info" id="excel-table-8">
+                    <thead class="thead-dark">
+                        <tr style="text-align: center;">
+                            <th>Movie Name</th>
+                            <th>Ticket Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of month8 |   paginate: {id:'listing_pagination8', itemsPerPage: 10, currentPage: p2,totalItems: totalRecord8}">
+                            <td>{{data.movieName}}</td>
+                            <td>{{data.ticketQuantity}}</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div>
+                    <button style="margin-left: 970px;margin-bottom: 10px;" (click)="exportexcel8()" class="btn btn-success">Export To Excel</button>
+                </div>
+                <pagination-controls (pageChange)="p8 = $event" previousLabel="Previous" nextLabel="Next" maxSize="5" directionLinks="true" id="listing_pagination8"></pagination-controls>
+            </mat-tab>
+            <!-- september -->
+            <mat-tab label="September">
+                <table class="table table-hover table-bordered table-info" id="excel-table-9">
+                    <thead class="thead-dark">
+                        <tr style="text-align: center;">
+                            <th>Movie Name</th>
+                            <th>Ticket Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of month9 |   paginate: {id:'listing_pagination9', itemsPerPage: 10, currentPage: p9,totalItems: totalRecord9}">
+                            <td>{{data.movieName}}</td>
+                            <td>{{data.ticketQuantity}}</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div>
+                    <button style="margin-left: 970px;margin-bottom: 10px;" (click)="exportexcel9()" class="btn btn-success">Export To Excel</button>
+                </div>
+                <pagination-controls (pageChange)="p9 = $event" previousLabel="Previous" nextLabel="Next" maxSize="5" directionLinks="true" id="listing_pagination9"></pagination-controls>
+            </mat-tab>
+            <!-- october -->
+            <mat-tab label="October">
+                <table class="table table-hover table-bordered table-info" id="excel-table-10">
+                    <thead class="thead-dark">
+                        <tr style="text-align: center;">
+                            <th>Movie Name</th>
+                            <th>Ticket Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of month10 |   paginate: {id:'listing_pagination10', itemsPerPage: 10, currentPage: p10,totalItems: totalRecord10}">
+                            <td>{{data.movieName}}</td>
+                            <td>{{data.ticketQuantity}}</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div>
+                    <button style="margin-left: 970px;margin-bottom: 10px;" (click)="exportexcel10()" class="btn btn-success">Export To Excel</button>
+                </div>
+                <pagination-controls (pageChange)="p10 = $event" previousLabel="Previous" nextLabel="Next" maxSize="5" directionLinks="true" id="listing_pagination10"></pagination-controls>
+            </mat-tab>
+            <!-- november -->
+            <mat-tab label="November">
+                <table class="table table-hover table-bordered table-info" id="excel-table-11">
+                    <thead class="thead-dark">
+                        <tr style="text-align: center;">
+                            <th>Movie Name</th>
+                            <th>Ticket Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of month11 |   paginate: {id:'listing_pagination11', itemsPerPage: 10, currentPage: p11,totalItems: totalRecord11}">
+                            <td>{{data.movieName}}</td>
+                            <td>{{data.ticketQuantity}}</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div>
+                    <button style="margin-left: 970px;margin-bottom: 10px;" (click)="exportexcel11()" class="btn btn-success">Export To Excel</button>
+                </div>
+                <pagination-controls (pageChange)="p11 = $event" previousLabel="Previous" nextLabel="Next" maxSize="5" directionLinks="true" id="listing_pagination11"></pagination-controls>
+            </mat-tab>
+            <!-- december -->
+            <mat-tab label="December" >
+                <table class="table table-hover table-bordered table-info" id="excel-table-12">
+                    <thead class="thead-dark">
+                        <tr style="text-align: center;">
+                            <th>Movie Name</th>
+                            <th>Ticket Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of month12 |   paginate: {id:'listing_pagination12', itemsPerPage: 10, currentPage: p12,totalItems: totalRecord12}">
+                            <td>{{data.movieName}}</td>
+                            <td>{{data.ticketQuantity}}</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div>
+                    <button style="margin-left: 970px;margin-bottom: 10px;" (click)="exportexcel12()" class="btn btn-success">Export To Excel</button>
+                </div>
+                <pagination-controls (pageChange)="p12 = $event" previousLabel="Previous" nextLabel="Next" maxSize="5" directionLinks="true" id="listing_pagination12"></pagination-controls>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>
+<div class="w3-container w3-black w3-padding-32" style="margin-top: 350px;">
+
+</div>

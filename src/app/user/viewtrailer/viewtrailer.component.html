@@ -1,0 +1,15 @@
+<a class="btn" (click)="openModal(template)">Trailer</a>
+
+<ng-template #template>
+  <div class="trai">
+    <iframe
+      class="trailer"
+      width="928"
+      height="522"
+      [src]="urlSafe"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
+</ng-template>

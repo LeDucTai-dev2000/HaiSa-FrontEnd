@@ -1,0 +1,44 @@
+<div class="w3-main" style="margin-left:300px;margin-top:50px;">
+    <div class="w3-card-4" style="width:80%; margin-left: 120px;">
+
+        <div class=" w3-indigo" style=" text-align: center;">
+            <h1>UPDATE CINEMA</h1>
+        </div>
+        <form action="" class="w3-container" ngNativeValidate style="background-color:rgb(253, 225, 183) ;" [formGroup]="formcheck">
+
+            <div class="form-group">
+                <label class="w3-text-brown"> <b> ID: </b></label>
+                <input disabled type="text" class="form-control" [(ngModel)]="cinemas.cinemaId" [ngModelOptions]="{standalone: true}">
+            </div>
+
+            <div class="form-group">
+                <label class="w3-text-brown"> <b> Name: </b></label>
+                <input type="text" class="form-control" [(ngModel)]="cinemas.name" formControlName="Name" [ngClass]="{'is-invalid':
+              formcheck.get('Name').touched && formcheck.get('Name').invalid}">
+                <div *ngIf="formcheck.get('Name').touched && formcheck.get('Name').invalid" class="invalid-feedback">
+                    <div *ngIf="formcheck.get('Name').errors.required">Name is required</div>
+                    <div *ngIf="formcheck.get('Name').errors.pattern">Name required</div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="w3-text-brown"><b>Address: </b></label>
+                <input class="w3-input w3-border w3-sand" type="text" [(ngModel)]="cinemas.address" formControlName="Address" [ngClass]="{'is-invalid':
+            formcheck.get('Address').touched && formcheck.get('Address').invalid}">
+                <div *ngIf="formcheck.get('Address').touched && formcheck.get('Address').invalid" class="invalid-feedback">
+                    <div *ngIf="formcheck.get('Address').errors.required">Address is required</div>
+                    <div *ngIf="formcheck.get('Address').errors.pattern">Address required</div>
+                </div>
+            </div>
+
+            <div class=" w3-indigo" style="height:50px;text-align: center;">
+                <button type="submit" class="w3-button w3-deep-orange w3-round-xlarge" (click)="onupdateCinema()" [disabled]="!formcheck.valid" style="margin-top: 5px;">UPDATE CINEMA</button>
+                <button type="submit" class="w3-button w3-deep-orange w3-round-xlarge" (click)="back()" style="margin-top: 5px; margin-left: 5px;">BACK</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="w3-container w3-black w3-padding-32" style="margin-top: 350px;">
+
+</div>

@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="title">
+    <h2>ĐĂNG KÝ THÀNH VIÊN</h2>
+  </div>
+
+  <div>
+    <div class="fail text-center" *ngIf="saimail"> <h3>Mật khẩu cũ không đúng. Vui lòng nhập lại</h3></div>
+  </div>
+
+  <form [formGroup]="signup" (ngSubmit)="addMember()">
+    <div class="form-group">
+      <label for="exampleFormControlSelect2">Họ tên</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="name"
+        [ngClass]="{ 'is-invalid': submitted && f.name.errors }"
+      />
+      <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+        <div *ngIf="f.name.errors.required">Không được để trống tên</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Email</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="email"
+        [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+      />
+      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+        <div *ngIf="f.email.errors.required">Không được để trống Email</div>
+        <div *ngIf="f.email.errors.email">Email sai định dạng</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlSelect2">Số điện thoại</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="phone"
+        [ngClass]="{ 'is-invalid': submitted && f.phone.errors }"
+      />
+      <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+        <div *ngIf="f.phone.errors.required">Không được để trống SĐT</div>
+        <div *ngIf="f.phone.errors.minlength">SĐT phải lớn hơn 10 số</div>
+        <div *ngIf="f.phone.errors.maxlength">SĐT không được vượt quá 11 số</div>
+        <div *ngIf="f.phone.errors.pattern">SĐT chỉ được nhập số</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlSelect2">Mật khẩu</label>
+      <input
+        type="password"
+        class="form-control"
+        formControlName="password"
+        [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+      />
+      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">Không được để trống Mật khẩu</div>
+        <div *ngIf="f.password.errors.minlength">Mật khẩu phải lớn hơn 6 kí tự</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Nhập lại mật khẩu</label>
+      <input
+        type="password"
+        class="form-control"
+        formControlName="repass"
+        [ngClass]="{ 'is-invalid': submitted && f.repass.errors }"
+      />
+      <div *ngIf="submitted && f.repass.errors" class="invalid-feedback">
+        <div *ngIf="f.repass.errors.required">Vui lòng xác nhận mật khẩu</div>
+        <div *ngIf="f.repass.errors.mustMatch">Mật khẩu không trùng khớp</div>
+
+      </div>
+    </div>
+    <button class="btn btnEdit">ĐĂNG KÝ</button>
+  </form>
+</div>

@@ -1,0 +1,28 @@
+.push{
+  font-size: 20px;
+  color: #fff;
+}
+.push:hover{
+  color: #ff8a00;
+  transform: translateY(1px)
+}
+.menu{
+  background: rgba(0,0,0,0.5);
+  margin-top: 16px;
+}
+.btnUser{
+  color: #fff;
+  background: rgba(0,0,0,0);
+}
+.btnUser:hover{
+  color: #ff8a00;
+}
+.btnPlus{
+  color: #fff;
+}
+.btnPlus:hover{
+  color: #ff8a00;
+}
+.logout:hover {
+  color:#ff1e00;
+}

@@ -1,0 +1,105 @@
+<div class="w3-main" style="margin-left:305px;margin-top:50px;">
+    <strong style="margin-left: 400px; font-size: 40px;font-family: 'Courier New', Courier, monospace; color: rgb(247, 117, 43);">INFRASTRUCTURE</strong>
+    <div class="container">
+        <mat-tab-group>
+            <!-- Cinema 1  -->
+            <mat-tab label="HaiSa Nam Kì Khởi Nghĩa">
+                <table class="table table-hover table-bordered table-info" id="excel-table">
+                    <thead class="thead-dark">
+                        <tr style="text-align: center;">
+                            <th>Room Name</th>
+                            <th>Seat Amount</th>
+                            <th>Address</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of cinema1">
+                            <td>{{data.roomName}} -- {{data.cinema.name}}</td>
+                            <td>{{data.seatAmount}}</td>
+                            <td>{{data.cinema.address}}</td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            
+
+              
+
+            </mat-tab>
+
+            <!-- Cinema 2 -->
+            <mat-tab label="HaiSa Quang Trung">
+                <table class="table table-hover table-bordered table-info" id="excel-table">
+                    <thead class="thead-dark">
+                        <tr style="text-align: center;">
+                            <th>Room Name</th>
+                            <th>Seat Amount</th>
+                            <th>Address</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of cinema2">
+                            <td>{{data.roomName}} -- {{data.cinema.name}}</td>
+                            <td>{{data.seatAmount}}</td>
+                            <td>{{data.cinema.address}}</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </mat-tab>
+
+            <!-- Cinema 3 -->
+            <mat-tab label="HaiSa Nguyễn Kiệm">
+                <table class="table table-hover table-bordered table-info" id="excel-table">
+                    <thead class="thead-dark">
+                        <tr style="text-align: center;">
+                            <th>Room Name</th>
+                            <th>Seat Amount</th>
+                            <th>Address</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of cinema3">
+                            <td>{{data.roomName}} -- {{data.cinema.name}}</td>
+                            <td>{{data.seatAmount}}</td>
+                            <td>{{data.cinema.address}}</td>
+
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </mat-tab>
+
+            <!-- Cinema 4 -->
+            <mat-tab label="HaiSa Hoàng Sa">
+                <table class="table table-hover table-bordered table-info" id="excel-table">
+                    <thead class="thead-dark">
+                        <tr style="text-align: center;">
+                            <th>Room Name</th>
+                            <th>Seat Amount</th>
+                            <th>Address</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of cinema4">
+                            <td>{{data.roomName}} -- {{data.cinema.name}}</td>
+                            <td>{{data.seatAmount}}</td>
+                            <td>{{data.cinema.address}}</td>
+
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>
+<div class="w3-container w3-black w3-padding-32" style="margin-top: 400px;">
+
+</div>

@@ -1,0 +1,87 @@
+.container {
+  color: #fff;
+  padding-top: 10px;
+}
+.butt{
+  float: left;
+}
+.btn{
+  width: 100px;
+  margin-bottom: 15px;
+
+}
+.seat-item {
+  padding: 30px 10px 30px 10px;
+  border: 1px solid #fff;
+  border-radius:4px;
+  margin: 30px 0 30px 0;
+}
+.btnpay {
+  margin: 5px 40px 5px 30px;
+  background:#ff8a00;
+  width: 120px;
+  height: 40px;
+  color: #fff;
+}
+.btnpay:hover {
+  background: #e52f70;
+  transform: translateY(4px);
+}
+.btnpay:disabled{
+  background: gray;
+}
+.btnpay:visited{
+  background: rebeccapurple
+}
+.countdown {
+  padding-left: 30px;
+}
+.seatName {
+  color: #fff;
+
+}
+.btn-seat{
+  background: #ffd000;
+}
+.btn-seat:disabled{
+background: gray;
+}
+.btn-seat:hover{
+  background:#ff8a00;
+}
+.tv{
+  border: 1px solid #ff8a00;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 0px 10px 20px 10px;
+}
+.lv{
+  padding-bottom: 10px;
+  color:#ff8a00;
+}
+.name{
+  padding-right: 10px;
+}
+.seat{
+  padding-left: 50px;
+  min-height: 55px
+}
+.seat1{
+  padding-left: 50px;
+}
+.btn-demo{
+  background: #ffd000;
+  height: 30px;
+  width: 45px;
+}
+.btn-demo:disabled{
+  background: gray;
+}
+.btn-in{
+  background: red;
+  height: 30px;
+  width: 45px;
+}
+.ghe{
+  padding: 30px 0px 0px 30px;
+}
